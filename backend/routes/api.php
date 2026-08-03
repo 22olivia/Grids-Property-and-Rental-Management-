@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\AutomationController;
 use App\Http\Controllers\Api\ContractController;
 use App\Http\Controllers\Api\MaintenanceRequestController;
 use App\Http\Controllers\Api\OwnerController;
@@ -48,10 +49,13 @@ Route::prefix('v1')->group(function () {
                     'occupied_units' => RentalUnit::where('status', 'occupied')->count(),
                     'active_contracts' => Contract::where('status', 'active')->count(),
                     'pending_payments' => Payment::where('status', 'pending')->count(),
+                    'overdue_payments' => Payment::where('status', 'overdue')->count(),
                     'open_maintenance_requests' => MaintenanceRequest::whereIn('status', ['open', 'in_progress'])->count(),
                 ],
             ]);
         });
+
+        Route::post('/automation/run', [AutomationController::class, 'run']);
 
         Route::apiResource('owners', OwnerController::class);
         Route::apiResource('tenants', TenantController::class);
