@@ -30,6 +30,7 @@ class AutomationApiTest extends TestCase
                     'marked_overdue',
                     'reminders',
                     'expiring_leases',
+                    'expiry_reminders',
                     'ran_at',
                 ],
             ]);

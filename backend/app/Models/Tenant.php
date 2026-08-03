@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Notifications\Notifiable;
 
 #[Fillable([
     'user_id',
@@ -19,11 +20,21 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 ])]
 class Tenant extends Model
 {
+    use Notifiable;
+
     protected function casts(): array
     {
         return [
             'date_of_birth' => 'date',
         ];
+    }
+
+    /**
+     * Route mail notifications to the tenant email address.
+     */
+    public function routeNotificationForMail(): string
+    {
+        return $this->email;
     }
 
     public function user(): BelongsTo

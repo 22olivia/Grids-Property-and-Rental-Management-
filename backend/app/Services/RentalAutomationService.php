@@ -4,6 +4,8 @@ namespace App\Services;
 
 use App\Models\Contract;
 use App\Models\Payment;
+use App\Notifications\LeaseExpiryReminderNotification;
+use App\Notifications\RentPaymentReminderNotification;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
@@ -11,13 +13,15 @@ use Illuminate\Support\Str;
 class RentalAutomationService
 {
     /**
-     * Run the demo automation bundle and return a summary.
+     * Run the automation bundle synchronously and return a summary.
+     * Used by demo button and artisan command.
      *
      * @return array{
      *     generated_payments: int,
      *     marked_overdue: int,
      *     reminders: int,
      *     expiring_leases: int,
+     *     expiry_reminders: int,
      *     ran_at: string
      * }
      */
@@ -26,6 +30,7 @@ class RentalAutomationService
         $generated = $this->generateDuePayments();
         $overdue = $this->markOverduePayments();
         $reminders = $this->sendPaymentReminders();
+        $expiryReminders = $this->sendLeaseExpiryReminders();
         $expiring = $this->countExpiringLeases();
 
         return [
@@ -33,12 +38,14 @@ class RentalAutomationService
             'marked_overdue' => $overdue,
             'reminders' => $reminders,
             'expiring_leases' => $expiring,
+            'expiry_reminders' => $expiryReminders,
             'ran_at' => now()->toIso8601String(),
         ];
     }
 
     /**
      * Create the current-period rent payment for each active contract if missing.
+     * SRS: GPMS-FR-LSE-003 / FIN-001 recurring billing.
      */
     public function generateDuePayments(?Carbon $asOf = null): int
     {
@@ -48,7 +55,6 @@ class RentalAutomationService
 
         Contract::query()
             ->where('status', 'active')
-            ->with('tenant')
             ->each(function (Contract $contract) use ($asOf, $period, &$created): void {
                 $exists = Payment::query()
                     ->where('contract_id', $contract->id)
@@ -80,6 +86,7 @@ class RentalAutomationService
 
     /**
      * Mark pending payments past due date as overdue.
+     * SRS: collections / aging workflow.
      */
     public function markOverduePayments(?Carbon $asOf = null): int
     {
@@ -92,7 +99,8 @@ class RentalAutomationService
     }
 
     /**
-     * Log/send simple reminders for pending and overdue payments.
+     * Send rent/overdue reminders (email via notification + queue when enabled).
+     * SRS: GPMS-FR-NOT-005
      */
     public function sendPaymentReminders(): int
     {
@@ -103,17 +111,47 @@ class RentalAutomationService
             ->with('contract.tenant')
             ->each(function (Payment $payment) use (&$count): void {
                 $tenant = $payment->contract?->tenant;
-                $email = $tenant?->email ?? 'unknown';
 
-                Log::info('Rent reminder', [
-                    'payment_id' => $payment->id,
-                    'reference' => $payment->reference,
-                    'status' => $payment->status,
-                    'amount' => $payment->amount,
-                    'due_date' => optional($payment->due_date)->toDateString(),
-                    'tenant_email' => $email,
-                ]);
+                if (! $tenant || blank($tenant->email)) {
+                    Log::warning('Skipped rent reminder: missing tenant email', [
+                        'payment_id' => $payment->id,
+                    ]);
 
+                    return;
+                }
+
+                $tenant->notify(new RentPaymentReminderNotification($payment));
+                $count++;
+            });
+
+        return $count;
+    }
+
+    /**
+     * Notify tenants of leases expiring within 30 days.
+     * SRS: GPMS-FR-LSE-005 / NOT-005
+     */
+    public function sendLeaseExpiryReminders(?Carbon $asOf = null): int
+    {
+        $asOf ??= now();
+        $count = 0;
+
+        Contract::query()
+            ->where('status', 'active')
+            ->whereNotNull('end_date')
+            ->whereBetween('end_date', [
+                $asOf->toDateString(),
+                $asOf->copy()->addDays(30)->toDateString(),
+            ])
+            ->with('tenant')
+            ->each(function (Contract $contract) use (&$count): void {
+                $tenant = $contract->tenant;
+
+                if (! $tenant || blank($tenant->email)) {
+                    return;
+                }
+
+                $tenant->notify(new LeaseExpiryReminderNotification($contract));
                 $count++;
             });
 
@@ -130,7 +168,10 @@ class RentalAutomationService
         return Contract::query()
             ->where('status', 'active')
             ->whereNotNull('end_date')
-            ->whereBetween('end_date', [$asOf->toDateString(), $asOf->copy()->addDays(30)->toDateString()])
+            ->whereBetween('end_date', [
+                $asOf->toDateString(),
+                $asOf->copy()->addDays(30)->toDateString(),
+            ])
             ->count();
     }
 }
