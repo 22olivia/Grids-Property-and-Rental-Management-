@@ -29,7 +29,7 @@ class AuthApiTest extends TestCase
 
         $this->assertDatabaseHas('users', [
             'email' => 'new@example.com',
-            'role' => 'admin',
+            'role' => 'super_admin',
         ]);
     }
 
@@ -121,5 +121,46 @@ class AuthApiTest extends TestCase
         $response->assertOk();
 
         $this->assertTrue(Hash::check('new-password', $user->fresh()->password));
+    }
+
+    public function test_user_can_upload_and_remove_profile_photo(): void
+    {
+        \Illuminate\Support\Facades\Storage::fake('public');
+
+        $user = User::factory()->create();
+
+        $tmp = tempnam(sys_get_temp_dir(), 'avatar');
+        file_put_contents($tmp, 'fake-jpeg-bytes');
+        $file = new \Illuminate\Http\UploadedFile(
+            $tmp,
+            'avatar.jpg',
+            'image/jpeg',
+            null,
+            true,
+        );
+
+        $upload = $this->actingAs($user, 'sanctum')
+            ->post('/api/v1/profile/photo', [
+                'photo' => $file,
+            ], [
+                'Accept' => 'application/json',
+            ]);
+
+        $upload->assertOk()
+            ->assertJsonPath('message', 'Profile photo updated.');
+
+        $user->refresh();
+        $this->assertNotNull($user->photo_path);
+        \Illuminate\Support\Facades\Storage::disk('public')->assertExists($user->photo_path);
+        $this->assertNotNull($upload->json('user.photo_url'));
+
+        $delete = $this->actingAs($user, 'sanctum')
+            ->deleteJson('/api/v1/profile/photo');
+
+        $delete->assertOk()
+            ->assertJsonPath('message', 'Profile photo removed.');
+
+        $user->refresh();
+        $this->assertNull($user->photo_path);
     }
 }

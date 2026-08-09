@@ -1,5 +1,7 @@
 <?php
 
+use App\Jobs\ProcessScheduledNotificationsJob;
+use App\Jobs\RetryFailedEmailsJob;
 use App\Jobs\RunRentalAutomationJob;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
@@ -23,4 +25,14 @@ Artisan::command('inspire', function () {
 Schedule::job(new RunRentalAutomationJob)
     ->dailyAt('06:00')
     ->name('rental-daily-automation')
+    ->withoutOverlapping();
+
+Schedule::job(new ProcessScheduledNotificationsJob)
+    ->everyMinute()
+    ->name('notification-scheduled-dispatch')
+    ->withoutOverlapping();
+
+Schedule::job(new RetryFailedEmailsJob)
+    ->everyFiveMinutes()
+    ->name('email-retry-failed')
     ->withoutOverlapping();

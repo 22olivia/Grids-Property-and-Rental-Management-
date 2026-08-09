@@ -13,9 +13,20 @@ use Illuminate\Notifications\Notifiable;
     'full_name',
     'email',
     'phone',
+    'alternate_phone',
     'national_id',
     'date_of_birth',
+    'occupation',
+    'employer',
     'emergency_contact',
+    'communication_address',
+    'preferred_language',
+    'profile_completion',
+    'identity_type',
+    'identity_number_encrypted',
+    'identity_verification_status',
+    'identity_expiry_date',
+    'settings',
     'notes',
 ])]
 class Tenant extends Model
@@ -26,6 +37,8 @@ class Tenant extends Model
     {
         return [
             'date_of_birth' => 'date',
+            'identity_expiry_date' => 'date',
+            'settings' => 'array',
         ];
     }
 

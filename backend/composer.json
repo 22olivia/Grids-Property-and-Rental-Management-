@@ -1,9 +1,9 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "grids/gpms-api",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "Grids Property Management System (GPMS) — Laravel API",
+    "keywords": ["gpms", "rental", "laravel", "property-management"],
     "license": "MIT",
     "require": {
         "php": "^8.3",

@@ -39,9 +39,38 @@ class TenantController extends Controller
 
     public function show(Tenant $tenant): JsonResponse
     {
-        $tenant->load(['contracts.rentalUnit', 'maintenanceRequests']);
+        $tenant->load([
+            'contracts' => fn ($query) => $query->latest('start_date'),
+            'contracts.rentalUnit.property',
+            'contracts.payments' => fn ($query) => $query->latest('due_date'),
+            'maintenanceRequests' => fn ($query) => $query->latest(),
+            'maintenanceRequests.rentalUnit',
+        ]);
 
-        return response()->json(['data' => $tenant]);
+        $payments = $tenant->contracts
+            ->flatMap(function ($contract) {
+                return $contract->payments->map(fn ($payment) => [
+                    'id' => $payment->id,
+                    'reference' => $payment->reference,
+                    'amount' => $payment->amount,
+                    'due_date' => optional($payment->due_date)->toDateString(),
+                    'paid_at' => optional($payment->paid_at)->toDateString(),
+                    'method' => $payment->method,
+                    'status' => $payment->status,
+                    'period' => $payment->period,
+                    'contract_number' => $contract->contract_number,
+                ]);
+            })
+            ->sortByDesc(fn ($payment) => $payment['due_date'] ?? '')
+            ->values();
+
+        $payload = $tenant->toArray();
+        $payload['payment_history'] = $payments->all();
+        $payload['receipts'] = $payments->where('status', 'paid')->values()->all();
+
+        return response()->json([
+            'data' => $payload,
+        ]);
     }
 
     public function update(Request $request, Tenant $tenant): JsonResponse

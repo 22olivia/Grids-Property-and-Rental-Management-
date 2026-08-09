@@ -15,7 +15,7 @@ class ApiHealthTest extends TestCase
 
         $response->assertOk()
             ->assertJsonPath('status', 'ok')
-            ->assertJsonPath('service', 'rental-api');
+            ->assertJsonPath('service', 'grids-gpms-api');
     }
 
     public function test_dashboard_requires_authentication(): void

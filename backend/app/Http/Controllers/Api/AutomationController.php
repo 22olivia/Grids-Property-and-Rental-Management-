@@ -38,4 +38,17 @@ class AutomationController extends Controller
             'data' => $summary,
         ]);
     }
+
+    /**
+     * Reset demo seed payments so the Run button can be shown again.
+     */
+    public function resetDemo(RentalAutomationService $automation): JsonResponse
+    {
+        $result = $automation->resetDemo();
+
+        return response()->json([
+            'message' => $result['message'],
+            'data' => $result,
+        ]);
+    }
 }

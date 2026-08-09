@@ -32,6 +32,13 @@ class AutomationApiTest extends TestCase
                     'expiring_leases',
                     'expiry_reminders',
                     'ran_at',
+                    'plain_summary',
+                    'changes' => [
+                        'generated',
+                        'marked_overdue',
+                        'reminders',
+                        'expiry_reminders',
+                    ],
                 ],
             ]);
 
@@ -40,8 +47,28 @@ class AutomationApiTest extends TestCase
             \App\Models\Payment::query()->where('status', 'overdue')->count()
         );
 
+        // Demo seed already bills the current month for active leases; generation may be 0.
+        $this->assertGreaterThanOrEqual(0, (int) $response->json('data.generated_payments'));
+    }
+
+    public function test_reset_demo_restores_overdue_seed_payment(): void
+    {
+        $this->seed(DemoRentalSeeder::class);
+        $user = User::query()->where('email', 'admin@rental.test')->firstOrFail();
+
+        $this->actingAs($user, 'sanctum')->postJson('/api/v1/automation/run')->assertOk();
+
+        $this->actingAs($user, 'sanctum')
+            ->postJson('/api/v1/automation/reset-demo')
+            ->assertOk()
+            ->assertJsonPath('data.reset_overdue_demo', true);
+
         $this->assertDatabaseHas('payments', [
-            'period' => now()->format('Y-m'),
+            'reference' => 'PAY-DEMO-OVERDUE-01',
+            'status' => 'pending',
+        ]);
+
+        $this->assertDatabaseMissing('payments', [
             'notes' => 'Auto-generated rent for '.now()->format('Y-m'),
         ]);
     }

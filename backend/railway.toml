@@ -1,0 +1,9 @@
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+# Do not seed on every boot — that delays bind and can 502 the public URL.
+# Seed once with SEED_ON_BOOT=1, then turn it off.
+startCommand = "bash start.sh"
+restartPolicyType = "ON_FAILURE"

@@ -1,128 +1,125 @@
-# Rental API (Laravel)
+# GPMS API — Grids Property Management System
 
-Backend API for the rental management system.
+Standalone **Laravel 13 + Sanctum** backend for GPMS.  
+This folder is designed to live in its **own GitHub repo** and deploy separately from any frontend.
 
-## Requirements
+## Stack
 
-- PHP 8.3+
-- Composer
-- MySQL 8+
+- PHP 8.3+, Laravel 13, Sanctum tokens
+- MySQL 8+ (SQLite works for local tests)
+- Role-based access: `super_admin`, `owner`, `manager`, `tenant`
+- Modules: users, properties, units, leases, invoices, payments, maintenance, automation, role dashboards
 
-## Setup
+## Quick start (local)
 
 ```bash
 composer install
 cp .env.example .env
 php artisan key:generate
-```
 
-### MySQL
-
-Create the database and user (example):
-
-```sql
-CREATE DATABASE rental CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-CREATE USER 'rental'@'localhost' IDENTIFIED BY 'rental_secret';
-GRANT ALL PRIVILEGES ON rental.* TO 'rental'@'localhost';
-FLUSH PRIVILEGES;
-```
-
-`.env.example` defaults:
-
-```
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=rental
-DB_USERNAME=rental
-DB_PASSWORD=rental_secret
-```
-
-```bash
+# MySQL (or switch DB_CONNECTION=sqlite for quick local)
 php artisan migrate --seed
 php artisan serve
 ```
 
-## Authentication
+API base: `http://127.0.0.1:8000/api/v1`  
+Health: `GET /api/v1/health`
 
-Uses **Laravel Sanctum** personal access tokens + email password reset.
+## Demo logins (after seed)
 
-| Method | Endpoint | Auth | Purpose |
-|--------|----------|------|---------|
-| POST | `/api/v1/signup` | Public | Create account |
-| POST | `/api/v1/register` | Public | Alias of signup |
-| POST | `/api/v1/login` | Public | Log in (guides to signup if email missing) |
-| POST | `/api/v1/forgot-password` | Public | Email a reset link |
-| POST | `/api/v1/reset-password` | Public | Set new password with token |
-| GET | `/api/v1/me` | Bearer token | Current user |
-| POST | `/api/v1/logout` | Bearer token | Revoke token |
+| Role | Email | Password |
+|------|-------|----------|
+| Super Admin | `admin@rental.test` | `password` |
+| Owner | `owner@grids.test` | `password` |
+| Manager | `manager@grids.test` | `password` |
+| Tenant | `tenant@grids.test` | `password` |
 
-Login / signup response includes `token`. Send it as:
+## Auth
 
+```http
+POST /api/v1/login
+Content-Type: application/json
+
+{ "email": "admin@rental.test", "password": "password" }
 ```
+
+Response includes `token`. Send on later calls:
+
+```http
 Authorization: Bearer {token}
 ```
 
-### Forgot password flow
+## Main endpoints
 
-1. `POST /api/v1/forgot-password` with `{ "email": "user@example.com" }`
-2. User receives email (via your `MAIL_*` settings) with a link like:
-   `http://localhost:3000/reset-password?token=...&email=...`
-3. Frontend page collects new password and calls:
-   `POST /api/v1/reset-password` with `token`, `email`, `password`, `password_confirmation`
+| Area | Base path |
+|------|-----------|
+| Auth / profile | `/login`, `/signup`, `/me`, `/logout`, `/notifications` |
+| Dashboard (role-scoped) | `GET /dashboard` |
+| Users / roles | `/users`, `/users/stats`, `/roles` |
+| Owners / tenants | `/owners`, `/tenants` |
+| Properties / units | `/properties`, `/rental-units` |
+| Leases | `/leases`, `/leases/{id}/activate|terminate|renew|timeline` |
+| Invoices | `/invoices`, `POST /invoices/generate` |
+| Payments / txns | `/payments`, `/transactions`, approve/reject/refund |
+| Online checkout | `POST /payments/orders`, confirm, `POST /payments/webhook` |
+| Maintenance | `/maintenance-requests` |
+| Public listings | `GET /listings` |
+| Demo automation | `POST /automation/run` |
 
-### Mail setup (your keys)
+See **[INTEGRATION.md](./INTEGRATION.md)** for frontend wiring.  
+See **[PAYMENTS.md](./PAYMENTS.md)** for online checkout (demo + Paytm).
 
-Put your provider credentials in `backend/.env`:
+## Env (production)
 
 ```env
-MAIL_MAILER=smtp
-MAIL_SCHEME=tls
-MAIL_HOST=smtp.gmail.com
-MAIL_PORT=587
-MAIL_USERNAME=your-email@gmail.com
-MAIL_PASSWORD=your-app-password-or-smtp-key
-MAIL_FROM_ADDRESS="your-email@gmail.com"
-MAIL_FROM_NAME="${APP_NAME}"
-FRONTEND_URL=http://localhost:3000
+APP_NAME="Grids GPMS API"
+APP_URL=https://your-api.example.com
+FRONTEND_URL=https://your-frontend.example.com
+DB_CONNECTION=mysql
+QUEUE_CONNECTION=sync
+MAIL_MAILER=log
 ```
 
-Gmail needs an [App Password](https://myaccount.google.com/apppasswords). For local testing without real email, use `MAIL_MAILER=log` (emails go to `storage/logs/laravel.log`).
+`FRONTEND_URL` is used for password-reset links. CORS currently allows all origins (tighten in `config/cors.php` for production).
 
-Seeded admin: `admin@rental.test` / `password`
+## Deploy (Railway)
 
-## API resources (auth required)
+This package includes `Dockerfile`, `railway.toml`, and `start.sh`.
 
-| Resource | Endpoint |
-|----------|----------|
-| Dashboard stats | `GET /api/v1/dashboard` |
-| Owners | `/api/v1/owners` |
-| Tenants | `/api/v1/tenants` |
-| Properties | `/api/v1/properties` |
-| Rental units | `/api/v1/rental-units` |
-| Contracts | `/api/v1/contracts` |
-| Payments | `/api/v1/payments` |
-| Maintenance requests | `/api/v1/maintenance-requests` |
+Suggested Railway vars:
 
-All resource endpoints support standard REST verbs: `GET` (index/show), `POST`, `PUT/PATCH`, `DELETE`.
+- `APP_KEY` (generate once)
+- `APP_URL` = `https://your-service.up.railway.app`
+- `FRONTEND_URL` = your Vercel / frontend URL
+- MySQL plugin → `DB_*`
+- `QUEUE_CONNECTION=sync` on free tier
 
-Health check (public): `GET /api/v1/health`
+## Tests
 
-## Database entities
-
-```
-users ──┬── owners ──── properties ──── rental_units ─┬── contracts ──── payments
-        │                                              └── maintenance_requests
-        └── tenants ───────────────────────────────────────┘
+```bash
+php artisan test
 ```
 
-| Table | Purpose |
-|-------|---------|
-| `users` | Auth accounts (`role`: admin, owner, tenant, staff) |
-| `owners` | Property owners |
-| `tenants` | Renters |
-| `properties` | Buildings / sites owned by an owner |
-| `rental_units` | Individual units within a property |
-| `contracts` | Lease agreements (tenant ↔ unit) |
-| `payments` | Rent / deposit payments on a contract |
-| `maintenance_requests` | Repair tickets for a unit |
+## Publish this folder as its own repo
+
+From the monorepo root (or use the script):
+
+```bash
+# Option A — script
+bash scripts/export-backend-repo.sh
+
+# Option B — manual split into a new empty GitHub repo
+git subtree split -P backend -b gpms-api-export
+# create empty repo on GitHub, then:
+git push https://github.com/YOU/gpms-api.git gpms-api-export:main
+```
+
+Or unzip the artifact `gpms-api-backend.tar.gz`, then:
+
+```bash
+cd gpms-api
+git init
+git add .
+git commit -m "Initial GPMS API"
+gh repo create YOU/gpms-api --private --source=. --push
+```

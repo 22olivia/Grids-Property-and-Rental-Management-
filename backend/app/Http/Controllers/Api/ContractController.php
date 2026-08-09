@@ -31,7 +31,7 @@ class ContractController extends Controller
             'monthly_rent' => ['required', 'numeric', 'min:0'],
             'deposit_amount' => ['sometimes', 'numeric', 'min:0'],
             'payment_day' => ['sometimes', 'integer', 'min:1', 'max:28'],
-            'status' => ['sometimes', 'string', 'in:draft,active,expired,terminated'],
+            'status' => ['sometimes', 'string', 'in:draft,pending_approval,active,expiring_soon,expired,terminated,renewed'],
             'terms' => ['nullable', 'string'],
             'contract_number' => ['sometimes', 'string', 'unique:contracts,contract_number'],
         ]);
@@ -63,7 +63,7 @@ class ContractController extends Controller
             'monthly_rent' => ['sometimes', 'numeric', 'min:0'],
             'deposit_amount' => ['sometimes', 'numeric', 'min:0'],
             'payment_day' => ['sometimes', 'integer', 'min:1', 'max:28'],
-            'status' => ['sometimes', 'string', 'in:draft,active,expired,terminated'],
+            'status' => ['sometimes', 'string', 'in:draft,pending_approval,active,expiring_soon,expired,terminated,renewed'],
             'terms' => ['nullable', 'string'],
         ]);
 
