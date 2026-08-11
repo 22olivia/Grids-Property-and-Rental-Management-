@@ -1,0 +1,648 @@
+{
+  "common": {
+    "loading": "Loading",
+    "cancel": "Cancel",
+    "close": "Close",
+    "save": "Save",
+    "retry": "Try again",
+    "clear": "Clear",
+    "clearFilters": "Clear filters",
+    "all": "All",
+    "select": "Select",
+    "edit": "Edit",
+    "reference": "Reference:",
+    "unexpectedError": "Something went wrong",
+    "resultCount": "{count, plural, =0 {No results} one {# result} other {# results}}",
+    "yes": "Yes",
+    "no": "No",
+    "delete": "Delete"
+  },
+  "a11y": {
+    "skipToContent": "Skip to main content"
+  },
+  "shell": {
+    "productName": "GPMS",
+    "mainNavigation": "Main navigation",
+    "toggleNavigation": "Toggle navigation",
+    "changeLanguage": "Change language",
+    "navigationUnavailable": "Navigation is not configured yet."
+  },
+  "foundation": {
+    "title": "Frontend foundation",
+    "description": "FE-0 foundation only. No business screens are implemented. Layout, tokens, typography, direction and the component library are active on this route."
+  },
+  "auth": {
+    "login": {
+      "title": "Sign in",
+      "identifier": "Email address",
+      "password": "Password",
+      "submit": "Sign in",
+      "submitting": "Signing in",
+      "contractMissingTitle": "Authentication is not connected",
+      "contractMissingBody": "The GPMS API contract has not been published, so sign-in cannot complete. This form is the finished foundation; only the endpoint is missing.",
+      "demoTitle": "Demo mode",
+      "demoBody": "The real API is not configured, so sign-in uses sample accounts. Use admin@rental.test, owner@grids.test, manager@grids.test or tenant@grids.test with any password."
+    },
+    "validation": {
+      "required": "This field is required."
+    },
+    "errors": {
+      "unexpected": "Sign-in could not be completed.",
+      "reference": "Reference:"
+    }
+  },
+  "errors": {
+    "reference": "Reference:",
+    "notFound": {
+      "title": "Page not found",
+      "description": "The page you are looking for does not exist or has moved.",
+      "action": "Go to the home page"
+    },
+    "unexpected": {
+      "title": "Something went wrong",
+      "description": "This page could not be displayed. Trying again may resolve it.",
+      "retry": "Try again"
+    }
+  },
+  "states": {
+    "noData": {
+      "title": "Nothing here yet",
+      "description": "Records will appear here once they are added."
+    },
+    "noResults": {
+      "title": "No matches",
+      "description": "No records match the current filters.",
+      "action": "Clear filters"
+    },
+    "noAccess": {
+      "title": "You do not have access",
+      "description": "You do not have permission to view this. Ask an administrator if you need it."
+    },
+    "scopeEmpty": {
+      "title": "Nothing assigned to you",
+      "description": "Nothing has been assigned to your account yet."
+    },
+    "error": {
+      "title": "This could not be loaded"
+    }
+  },
+  "pagination": {
+    "navigation": "Pagination",
+    "previous": "Previous",
+    "next": "Next",
+    "status": "Page {page} of {total}"
+  },
+  "ast": {
+    "module": "Property assets",
+    "breadcrumbLabel": "Breadcrumb",
+    "tabs": {
+      "overview": "Overview"
+    },
+    "properties": {
+      "title": "Properties",
+      "create": "Add property",
+      "search": "Search properties",
+      "tableCaption": "List of properties with reference, classification, location and unit count",
+      "emptyTitle": "No properties yet",
+      "emptyDescription": "Add your first property to start building the inventory that listings, leases and maintenance all depend on.",
+      "created": "Property created",
+      "updated": "Property updated",
+      "deleteTitle": "Delete this property?",
+      "deleteDescription": "This removes the property record. Units and buildings that reference it may be affected.",
+      "deleteConfirm": "Delete property",
+      "deleted": "Property deleted"
+    },
+    "buildings": {
+      "title": "Buildings",
+      "search": "Search buildings",
+      "tableCaption": "List of buildings with reference, parent property, floor count and unit count",
+      "emptyTitle": "No buildings yet",
+      "emptyDescription": "Buildings group floors and units within a property.",
+      "floors": "Floors",
+      "floorsCaption": "Floors in this building with level and unit count",
+      "noFloorsTitle": "No floors recorded",
+      "noFloorsDescription": "Floors organise units within a building."
+    },
+    "units": {
+      "title": "Units",
+      "create": "Add unit",
+      "search": "Search units",
+      "tableCaption": "List of units with reference, type, property, availability status, area and price",
+      "emptyTitle": "No units yet",
+      "emptyDescription": "Units are the inventory that listings link to and that leases are signed against.",
+      "created": "Unit created",
+      "updated": "Unit updated",
+      "deleteTitle": "Delete this unit?",
+      "deleteDescription": "This removes the unit record. Leases or invoices that reference it may be affected.",
+      "deleteConfirm": "Delete unit",
+      "deleted": "Unit deleted"
+    },
+    "form": {
+      "identification": "Identification",
+      "location": "Location",
+      "placement": "Placement",
+      "attributes": "Attributes",
+      "money": "Rent and charges",
+      "publication": "Publication"
+    },
+    "field": {
+      "name": "Name",
+      "reference": "Reference",
+      "status": "Availability status",
+      "statusHelp": "Occupied and unavailable units cannot be advertised.",
+      "property": "Property",
+      "building": "Building",
+      "floor": "Floor",
+      "level": "Level",
+      "line1": "Address line 1",
+      "line2": "Address line 2",
+      "city": "City",
+      "region": "Region",
+      "country": "Country",
+      "postalCode": "Postal code",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "areaSqm": "Area (m²)",
+      "bedrooms": "Bedrooms",
+      "bathrooms": "Bathrooms",
+      "unitCount": "Units",
+      "createdAt": "Created",
+      "updatedAt": "Last updated",
+      "unitNumber": "Unit number",
+      "unitType": "Unit type",
+      "ownerId": "Owner ID",
+      "ownerIdHelp": "Numeric ID of an existing owner record. Required by the API.",
+      "owner": "Owner",
+      "propertyType": "Property type",
+      "propertyStatus": "Status",
+      "totalFloors": "Floors",
+      "code": "Code",
+      "state": "Region / state",
+      "squareFeet": "Area (sq ft)",
+      "furnishingStatus": "Furnishing",
+      "monthlyRent": "Monthly rent ({currency})",
+      "maintenanceCharge": "Maintenance charge ({currency})",
+      "depositAmount": "Deposit ({currency})",
+      "rent": "Rent",
+      "maintenanceChargeShort": "Maintenance",
+      "depositShort": "Deposit",
+      "moneyHelp": "Enter the amount without a currency symbol.",
+      "currencyNote": "Currency is set for the whole system; the API does not store a currency per unit yet.",
+      "isListed": "Listed publicly",
+      "description": "Description",
+      "totalUnits": "Declared unit count"
+    },
+    "unitStatus": {
+      "available": "Available (legacy)",
+      "reserved": "Reserved",
+      "occupied": "Occupied",
+      "unavailable": "Unavailable",
+      "vacant": "Vacant",
+      "application_pending": "Application pending",
+      "notice_period": "Notice period",
+      "under_maintenance": "Under maintenance",
+      "blocked": "Blocked",
+      "maintenance": "Maintenance (legacy)"
+    },
+    "detail": {
+      "notFoundTitle": "Record not found",
+      "notFoundDescription": "This record does not exist or you do not have access to it.",
+      "inventory": "Inventory",
+      "viewUnits": "View units",
+      "record": "Record",
+      "historyUnavailableTitle": "Change history is not available",
+      "historyUnavailableBody": "The API does not yet expose a change history for properties, so none is shown rather than a placeholder.",
+      "timelineUnavailableTitle": "Availability history is not available",
+      "timelineUnavailableBody": "The API does not yet expose an occupancy timeline for units. The current status above is live."
+    },
+    "map": {
+      "title": "Map selection",
+      "unavailable": "Map selection is not available yet. Enter coordinates manually for now."
+    },
+    "validation": {
+      "required": "This field is required.",
+      "positive": "Enter a number greater than zero.",
+      "amount": "Enter an amount using digits, for example 1500.00",
+      "invalid": "This value is not valid."
+    },
+    "propertyType": {
+      "apartment": "Apartment",
+      "house": "House",
+      "commercial": "Commercial",
+      "villa": "Villa"
+    },
+    "propertyStatus": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "under_maintenance": "Under maintenance"
+    }
+  },
+  "data": {
+    "mockTitle": "Sample data",
+    "mockDescription": "This screen is showing placeholder data for interface development. It is not real information.",
+    "duplicateTitle": "Possible duplicate",
+    "duplicateDescription": "These existing records look similar. Check before saving — the server will reject a true duplicate.",
+    "customFieldsTitle": "Custom fields",
+    "customFieldsUnavailable": "Custom fields for {entity} are not available yet. The field definition contract has not been published."
+  },
+  "lst": {
+    "module": "Listings",
+    "breadcrumbLabel": "Breadcrumb",
+    "tabs": {
+      "overview": "Overview",
+      "workflow": "Workflow",
+      "history": "History"
+    },
+    "listings": {
+      "title": "Listings",
+      "create": "Add listing",
+      "search": "Search listings",
+      "tableCaption": "List of listings with reference, type, state, property, price, views and enquiries",
+      "emptyTitle": "No listings yet",
+      "emptyDescription": "A listing advertises a unit. Create one from a property or unit in the inventory.",
+      "created": "Listing created",
+      "updated": "Listing updated"
+    },
+    "approvals": {
+      "title": "Approval queue",
+      "search": "Search submissions",
+      "tableCaption": "Listings awaiting review or approval, with state and submission time",
+      "emptyTitle": "Nothing awaiting approval",
+      "emptyDescription": "Listings submitted for review will appear here."
+    },
+    "projects": {
+      "title": "Projects",
+      "search": "Search projects",
+      "tableCaption": "List of projects with reference, developer, city and available units",
+      "emptyTitle": "No projects yet",
+      "emptyDescription": "Projects group new-development inventory by unit type.",
+      "inventory": "Unit type inventory",
+      "inventoryCaption": "Unit types with totals, availability, area range and price range"
+    },
+    "form": {
+      "details": "Listing details",
+      "linkedAsset": "Linked asset",
+      "pricing": "Pricing and size",
+      "location": "Location",
+      "assetSeparationNote": "A listing advertises an asset; it does not replace it. Availability, occupancy and billing stay with the asset and the contract."
+    },
+    "field": {
+      "title": "Title",
+      "reference": "Reference",
+      "type": "Purpose",
+      "state": "State",
+      "property": "Property",
+      "unit": "Unit",
+      "unitHelp": "Optional. Select a property first.",
+      "price": "Price",
+      "priceHelp": "Enter the amount without a currency symbol.",
+      "currency": "Currency",
+      "areaSqm": "Area (m²)",
+      "bedrooms": "Bedrooms",
+      "bathrooms": "Bathrooms",
+      "amenities": "Amenities",
+      "city": "City",
+      "neighborhood": "Neighbourhood",
+      "landmark": "Landmark",
+      "legalStatus": "Legal status",
+      "legalStatusHelp": "Free text — the permitted values have not been defined yet.",
+      "views": "Views",
+      "enquiries": "Enquiries",
+      "updatedAt": "Last updated",
+      "submitted": "Submitted",
+      "developer": "Developer",
+      "unitType": "Unit type",
+      "totalUnits": "Total",
+      "availableUnits": "Available",
+      "areaRange": "Area range",
+      "priceRange": "Price range"
+    },
+    "type": {
+      "sale": "Sale",
+      "long-term-rent": "Long-term rent",
+      "short-term-rent": "Short-term rent",
+      "commercial-lease": "Commercial lease",
+      "land": "Land",
+      "project": "Project"
+    },
+    "state": {
+      "draft": "Draft",
+      "review": "In review",
+      "approval": "Awaiting approval",
+      "published": "Published",
+      "paused": "Paused",
+      "expired": "Expired",
+      "closed": "Sold or rented",
+      "archived": "Archived"
+    },
+    "mediaKind": {
+      "image": "Image",
+      "video": "Video",
+      "floor-plan": "Floor plan",
+      "tour-360": "360° tour",
+      "document": "Document"
+    },
+    "amenity": {
+      "parking": "Parking",
+      "lift": "Lift",
+      "security": "Security",
+      "pool": "Pool",
+      "gym": "Gym",
+      "balcony": "Balcony",
+      "garden": "Garden",
+      "furnished": "Furnished"
+    },
+    "workflow": {
+      "title": "Lifecycle",
+      "available": "Available actions",
+      "moveTo": "Move to {state}",
+      "updated": "State updated",
+      "failed": "The state could not be changed.",
+      "blockedTitle": "Publishing is blocked"
+    },
+    "media": {
+      "title": "Media",
+      "watermarked": "Watermarked",
+      "remove": "Remove item {position}",
+      "moveEarlier": "Move item {position} earlier",
+      "moveLater": "Move item {position} later",
+      "removeTitle": "Remove this media item?",
+      "removeDescription": "It will no longer appear on the listing.",
+      "removeConfirm": "Remove item",
+      "emptyTitle": "No media yet",
+      "emptyDescription": "Images, floor plans and tours will appear here.",
+      "uploadUnavailableTitle": "Upload is not available yet",
+      "uploadUnavailableBody": "The file upload method has not been decided, so uploading is disabled. Ordering and removal work normally."
+    },
+    "detail": {
+      "notFoundTitle": "Listing not found",
+      "notFoundDescription": "This listing does not exist or you do not have access to it."
+    },
+    "history": {
+      "category": {
+        "state": "State",
+        "price": "Price",
+        "media": "Media",
+        "content": "Content"
+      }
+    },
+    "validation": {
+      "required": "This field is required.",
+      "positive": "Enter a number greater than zero.",
+      "amount": "Enter an amount using digits, for example 1500.00",
+      "invalid": "This value is not valid."
+    }
+  },
+  "crm": {
+    "module": "CRM",
+    "breadcrumbLabel": "Breadcrumb",
+    "tabs": {
+      "overview": "Overview",
+      "activities": "Activities"
+    },
+    "leads": {
+      "title": "Leads",
+      "create": "Add lead",
+      "search": "Search leads",
+      "tableCaption": "List of leads with stage, source, assigned agent, budget and next action",
+      "emptyTitle": "No leads yet",
+      "emptyDescription": "Leads arrive from the website, the mobile app, calls and imports, or you can add one manually.",
+      "created": "Lead created",
+      "updated": "Lead updated"
+    },
+    "pipeline": {
+      "title": "Pipeline",
+      "boardLabel": "Sales pipeline by stage",
+      "emptyColumn": "Nothing at this stage",
+      "moveLabel": "Move {name} to {stage}",
+      "moved": "Stage updated",
+      "moveFailed": "The stage could not be changed.",
+      "noMove": {
+        "previous": "No earlier stage",
+        "next": "No later stage"
+      }
+    },
+    "activities": {
+      "title": "Tasks and activities",
+      "search": "Search activities",
+      "tableCaption": "Tasks and reminders with type, due date, owner and completion status",
+      "emptyTitle": "No activities yet",
+      "emptyDescription": "Calls, notes, meetings, tasks and reminders appear here.",
+      "add": "Add activity",
+      "added": "Activity added",
+      "by": "Recorded by {actor}",
+      "due": "Due",
+      "done": "Done",
+      "markDone": "Mark done"
+    },
+    "matches": {
+      "title": "Matching properties",
+      "score": "{score}% match",
+      "noticeTitle": "Matches are calculated by the platform",
+      "noticeBody": "Scores and reasons come from the platform's matching rules, not from this screen.",
+      "emptyTitle": "No matches found",
+      "emptyDescription": "No listings currently meet this lead's stated criteria."
+    },
+    "viewings": {
+      "title": "Viewings",
+      "search": "Search viewings",
+      "tableCaption": "Viewing appointments with lead, listing, time, agent and status",
+      "emptyTitle": "No viewings scheduled",
+      "emptyDescription": "Viewing appointments will appear here once booked.",
+      "scheduleView": "Schedule",
+      "tableView": "Table",
+      "appointment": "Appointment",
+      "feedback": "Feedback",
+      "noFeedback": "No feedback recorded yet.",
+      "calendarNoticeTitle": "Shown as a daily schedule",
+      "calendarNoticeBody": "A week or month grid needs the first day of the week to be decided for the launch markets. The daily schedule is correct whichever way that goes.",
+      "actionsBlockedTitle": "Attendance actions are not available yet",
+      "actionsBlockedBody": "Recording attendance, a no-show or a reschedule are status changes, and the rules for who may make them have not been defined."
+    },
+    "offers": {
+      "title": "Offers",
+      "search": "Search offers",
+      "tableCaption": "Offers with lead, listing, amount, status and expiry",
+      "emptyTitle": "No offers yet",
+      "emptyDescription": "Offers submitted against listings will appear here.",
+      "terms": "Offer terms",
+      "negotiation": "Negotiation",
+      "noCounteroffers": "No counteroffers yet.",
+      "addCounter": "Add counteroffer",
+      "counterAdded": "Counteroffer recorded",
+      "party": {
+        "buyer": "Buyer",
+        "seller": "Seller"
+      },
+      "approvalBlockedTitle": "Approval is not available yet",
+      "approvalBlockedBody": "Offer approval and deposit handling are financial actions and are waiting on the finance module."
+    },
+    "deals": {
+      "title": "Deals",
+      "search": "Search deals",
+      "tableCaption": "Closed deals with lead, listing, value, outcome and close date",
+      "emptyTitle": "No closed deals yet",
+      "emptyDescription": "Deals appear here once a lead reaches a won or lost outcome."
+    },
+    "commissions": {
+      "title": "Commissions",
+      "search": "Search commissions",
+      "tableCaption": "Commission entries by deal, party, amount, rule and settlement status",
+      "emptyTitle": "No commissions yet",
+      "emptyDescription": "Commission entries appear once deals are closed.",
+      "settled": "Settled",
+      "pending": "Pending",
+      "calculationNoticeTitle": "Amounts are calculated by the platform",
+      "calculationNoticeBody": "This screen displays commission amounts as calculated by the configured rules. It performs no calculation of its own."
+    },
+    "assignmentRules": {
+      "title": "Assignment rules",
+      "subtitle": "Rules are evaluated in priority order"
+    },
+    "commissionRules": {
+      "title": "Commission rules",
+      "subtitle": "Rules are evaluated in priority order"
+    },
+    "rules": {
+      "priority": "#{value}",
+      "enabled": "Enabled",
+      "conditionUnavailable": "Condition not available",
+      "emptyTitle": "No rules configured",
+      "emptyDescription": "Rules will appear here once they are configured.",
+      "editorBlockedTitle": "Rules are read-only for now",
+      "editorBlockedBody": "The format for rule conditions has not been defined, so rules can be reviewed but not edited here yet."
+    },
+    "import": {
+      "title": "Import leads",
+      "blockedTitle": "Importing is not available yet",
+      "blockedBody": "Lead import needs the file upload method and the background job behaviour to be defined. Neither has been decided, so no importer is shown rather than one that cannot work.",
+      "sourcesTitle": "Where leads can come from",
+      "sourcesBody": "Once importing is available it will join these capture sources:"
+    },
+    "form": {
+      "contact": "Contact",
+      "criteria": "Requirements",
+      "nextAction": "Next action"
+    },
+    "field": {
+      "name": "Name",
+      "reference": "Reference",
+      "email": "Email",
+      "phone": "Phone",
+      "contactHelp": "Provide an email address or a phone number.",
+      "source": "Source",
+      "stage": "Stage",
+      "agent": "Agent",
+      "unassigned": "Unassigned",
+      "budget": "Budget",
+      "budgetHelp": "Enter the amount without a currency symbol.",
+      "currency": "Currency",
+      "minArea": "Minimum area (m²)",
+      "preferredCity": "Preferred city",
+      "preferredType": "Preferred type",
+      "nextAction": "Next action",
+      "nextActionNote": "Note",
+      "interestedListing": "Interested in",
+      "activityType": "Type",
+      "summary": "Summary",
+      "detail": "Detail",
+      "dueAt": "Due",
+      "dueAtHelp": "Only tasks and reminders carry a due date.",
+      "actor": "Recorded by",
+      "status": "Status",
+      "lead": "Lead",
+      "listing": "Listing",
+      "scheduledFor": "Scheduled for",
+      "amount": "Amount",
+      "counterAmount": "Counter amount",
+      "deposit": "Deposit",
+      "expiresAt": "Expires",
+      "note": "Note",
+      "value": "Value",
+      "outcome": "Outcome",
+      "closedAt": "Closed",
+      "deal": "Deal",
+      "party": "Party",
+      "rule": "Rule"
+    },
+    "source": {
+      "website-form": "Website form",
+      "mobile": "Mobile app",
+      "chat": "Chat",
+      "call": "Call",
+      "import": "Import",
+      "campaign": "Campaign",
+      "manual": "Manual entry"
+    },
+    "stage": {
+      "qualification": "Qualification",
+      "matching": "Matching",
+      "viewing": "Viewing",
+      "offer": "Offer",
+      "negotiation": "Negotiation",
+      "reservation": "Reservation",
+      "contract": "Contract",
+      "won": "Won",
+      "lost": "Lost"
+    },
+    "activityType": {
+      "call": "Call",
+      "note": "Note",
+      "meeting": "Meeting",
+      "task": "Task",
+      "reminder": "Reminder",
+      "message": "Message"
+    },
+    "viewingStatus": {
+      "scheduled": "Scheduled",
+      "attended": "Attended",
+      "no-show": "No-show",
+      "rescheduled": "Rescheduled"
+    },
+    "offerState": {
+      "submitted": "Submitted",
+      "countered": "Countered",
+      "approved": "Approved",
+      "expired": "Expired"
+    },
+    "basis": {
+      "territory": "Territory",
+      "branch": "Branch",
+      "workload": "Workload",
+      "property": "Property",
+      "campaign": "Campaign",
+      "manual": "Manual"
+    },
+    "party": {
+      "agent": "Agent",
+      "agency": "Agency",
+      "referral": "Referral",
+      "company": "Company"
+    },
+    "detail": {
+      "notFoundTitle": "Record not found",
+      "notFoundDescription": "This record does not exist or you do not have access to it."
+    },
+    "validation": {
+      "required": "This field is required.",
+      "email": "Enter a valid email address.",
+      "phone": "Enter a valid phone number.",
+      "positive": "Enter a number greater than zero.",
+      "amount": "Enter an amount using digits, for example 1500.00",
+      "contactRequired": "Provide an email address or a phone number.",
+      "invalid": "This value is not valid."
+    }
+  },
+  "audit": {
+    "emptyTitle": "No changes recorded",
+    "emptyDescription": "Changes will appear here once recorded.",
+    "none": "Not set",
+    "by": "Changed by {actor}"
+  },
+  "timeline": {
+    "emptyTitle": "No status history",
+    "emptyDescription": "Status changes will appear here once recorded.",
+    "listLabel": "Status periods",
+    "present": "Present"
+  }
+}

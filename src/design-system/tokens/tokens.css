@@ -1,0 +1,176 @@
+/* ==========================================================================
+   GPMS design tokens
+   --------------------------------------------------------------------------
+   Three layers, consumed strictly downward:
+
+     primitive  →  semantic  →  component
+
+   Components read semantic tokens only. This is what makes per-company
+   branding (FR-ADM-002) and company microsites (FR-MKT-008) a configuration
+   change rather than a refactor: an organisation overrides --brand-* on a
+   scope and every downstream surface follows.
+
+   Tokens are plain CSS custom properties, deliberately framework-neutral, so
+   the same source can be consumed by Laravel admin surfaces and referenced by
+   the Flutter team — EN-ARC-005 asks for "a bilingual responsive design
+   system shared by Next.js, administration surfaces and Flutter".
+   ========================================================================== */
+
+@layer base {
+  :root {
+    /* ---- primitive: colour ------------------------------------------- */
+    --gpms-basalt-900: #16202b;
+    --gpms-basalt-800: #22303f;
+    --gpms-basalt-600: #46586b;
+    --gpms-basalt-400: #7c8b9c;
+    --gpms-basalt-200: #b9c3cd;
+
+    --gpms-limestone-50: #f7f6f3;
+    --gpms-limestone-100: #edebe6;
+    --gpms-limestone-200: #ddd9d1;
+    --gpms-white: #ffffff;
+
+    --gpms-survey-700: #16584a;
+    --gpms-survey-600: #1f6f5c;
+    --gpms-survey-500: #2c8a73;
+    --gpms-survey-100: #ddebe6;
+
+    --gpms-amber-600: #c77a18;
+    --gpms-amber-100: #f7e9d3;
+
+    --gpms-violet-600: #5b4b8a;
+    --gpms-violet-100: #e5e1f0;
+
+    --gpms-clay-600: #b4443a;
+    --gpms-clay-100: #f6ddda;
+
+    /* ---- primitive: spacing (4px base) -------------------------------- */
+    --gpms-space-1: 0.25rem;
+    --gpms-space-2: 0.5rem;
+    --gpms-space-3: 0.75rem;
+    --gpms-space-4: 1rem;
+    --gpms-space-5: 1.25rem;
+    --gpms-space-6: 1.5rem;
+    --gpms-space-8: 2rem;
+    --gpms-space-10: 2.5rem;
+    --gpms-space-12: 3rem;
+    --gpms-space-16: 4rem;
+
+    /* ---- primitive: radius, elevation, motion ------------------------- */
+    --gpms-radius-sm: 0.25rem;
+    --gpms-radius-md: 0.375rem;
+    --gpms-radius-lg: 0.625rem;
+    --gpms-radius-full: 9999px;
+
+    /* Semantic aliases. Components reference these (not the --gpms-* set) via
+       arbitrary values, so they must exist in :root at runtime. */
+    --radius-sm: var(--gpms-radius-sm);
+    --radius-md: var(--gpms-radius-md);
+    --radius-lg: var(--gpms-radius-lg);
+    --radius-full: var(--gpms-radius-full);
+
+    --gpms-shadow-sm: 0 1px 2px 0 rgb(22 32 43 / 0.06);
+    --gpms-shadow-md: 0 2px 8px -2px rgb(22 32 43 / 0.12);
+    --gpms-shadow-lg: 0 12px 32px -8px rgb(22 32 43 / 0.18);
+
+    --shadow-sm: var(--gpms-shadow-sm);
+    --shadow-md: var(--gpms-shadow-md);
+    --shadow-lg: var(--gpms-shadow-lg);
+
+    --gpms-duration-fast: 150ms;
+    --gpms-duration-base: 200ms;
+    --gpms-ease: cubic-bezier(0.2, 0, 0.13, 1);
+
+    /* ---- semantic: brand (per-company overridable, FR-ADM-002) -------- */
+    /* Defaults to the GPMS platform accent. An organisation scope may
+       override --brand-600/--brand-100/--brand-contrast at runtime.
+       Contrast is validated at configuration time — an accessible product
+       cannot depend on a customer choosing a good colour (NFR-UX-001). */
+    --brand-600: var(--gpms-survey-600);
+    --brand-700: var(--gpms-survey-700);
+    --brand-100: var(--gpms-survey-100);
+    --brand-contrast: var(--gpms-white);
+
+    /* ---- semantic: surface & text ------------------------------------ */
+    --color-surface: var(--gpms-limestone-50);
+    --color-surface-raised: var(--gpms-white);
+    --color-surface-sunken: var(--gpms-limestone-100);
+    --color-surface-inverse: var(--gpms-basalt-900);
+
+    --color-border: var(--gpms-limestone-200);
+    --color-border-strong: var(--gpms-basalt-200);
+
+    --color-text: var(--gpms-basalt-900);
+    --color-text-muted: var(--gpms-basalt-600);
+    --color-text-subtle: var(--gpms-basalt-400);
+    --color-text-inverse: var(--gpms-white);
+    --color-text-on-brand: var(--brand-contrast);
+
+    /* ---- semantic: intent -------------------------------------------- */
+    --color-action: var(--brand-600);
+    --color-action-hover: var(--brand-700);
+    --color-success: var(--gpms-survey-600);
+    --color-success-surface: var(--gpms-survey-100);
+    --color-warning: var(--gpms-amber-600);
+    --color-warning-surface: var(--gpms-amber-100);
+    --color-danger: var(--gpms-clay-600);
+    --color-danger-surface: var(--gpms-clay-100);
+    --color-info: var(--gpms-violet-600);
+    --color-info-surface: var(--gpms-violet-100);
+
+    --color-focus: var(--gpms-basalt-900);
+
+    /* Modal scrim. A pre-composited value rather than an opacity modifier:
+       Tailwind cannot apply an alpha modifier to an arbitrary var() colour. */
+    --color-overlay: rgb(22 32 43 / 0.45);
+
+    /* ---- semantic: record classes ------------------------------------
+       SRS §11: "The property asset, listing and contract shall be separate
+       concepts… This separation is mandatory to prevent availability,
+       occupancy and billing conflicts."
+
+       That separation is the product's core distinction and the thing users
+       most often conflate. It is encoded as a structural device — the record
+       spine — rather than left to labels. Deliberately a separate token
+       family from --brand-*, so per-company branding never removes the
+       distinction. */
+    --record-asset: var(--gpms-basalt-600);
+    --record-listing: var(--gpms-amber-600);
+    --record-contract: var(--gpms-violet-600);
+    --record-money: var(--gpms-survey-600);
+    --record-party: var(--gpms-basalt-900);
+
+    /* ---- semantic: density -------------------------------------------
+       One token set, two settings. The marketplace and the console want
+       opposite things; an accountant reconciling 400 payments needs rows,
+       a renter browsing flats needs cards. Set via [data-density]. */
+    --density-row-height: 3.5rem;
+    --density-control-height: 2.75rem;
+    --density-gap: var(--gpms-space-4);
+    --density-card-padding: var(--gpms-space-6);
+    --density-font-body: 1rem;
+
+    /* ---- semantic: typography ----------------------------------------
+       Per-script line-height. Arabic sets taller than Latin at the same
+       size; a single global leading value looks cramped in Arabic. */
+    --leading-tight: 1.25;
+    --leading-body: 1.55;
+    --leading-relaxed: 1.7;
+  }
+
+  [data-density='compact'] {
+    --density-row-height: 2.5rem;
+    --density-control-height: 2.25rem;
+    --density-gap: var(--gpms-space-3);
+    --density-card-padding: var(--gpms-space-4);
+    --density-font-body: 0.875rem;
+  }
+
+  /* Arabic runs taller and needs more leading at every step. This is the
+     only place in the codebase where a rule keys off language. */
+  :root:lang(ar) {
+    --leading-tight: 1.45;
+    --leading-body: 1.8;
+    --leading-relaxed: 2;
+  }
+}
