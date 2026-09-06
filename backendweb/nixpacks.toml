@@ -1,0 +1,12 @@
+# Laravel on Railway (Nixpacks / Railpack)
+providers = ["...", "php"]
+
+[variables]
+NIXPACKS_PHP_ROOT_DIR = "/app/public"
+NIXPACKS_PHP_FALLBACK_PATH = "/index.php"
+IS_LARAVEL = "true"
+# Build-time defaults so Railpack does not fail with "secret APP_URL not found".
+# Runtime Railway Variables still override these when the app starts.
+APP_URL = "http://localhost"
+APP_ENV = "production"
+APP_KEY = "base64:2fl+KtvkdphvQyVfipNQq+o1+8vV+x2xP1oQkqZQf1E="
