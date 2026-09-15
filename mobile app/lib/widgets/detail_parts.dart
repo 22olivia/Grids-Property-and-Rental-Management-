@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -89,6 +90,7 @@ class _PropertyHeroState extends State<PropertyHero> {
               children: [
                 RIconButton(
                   icon: Icons.arrow_back_ios_new_rounded,
+                  mirrorInRtl: true,
                   floating: true,
                   tooltip: 'Back',
                   onTap: () => Navigator.maybePop(context),
@@ -175,7 +177,7 @@ class _PropertyHeroState extends State<PropertyHero> {
                           const Icon(Icons.grid_view_rounded,
                               size: 14, color: RC.navy),
                           const SizedBox(width: RS.x6),
-                          Text('View Gallery',
+                          Text('view_gallery'.tr(),
                               style: RT.captionSm.copyWith(
                                 color: RC.navy,
                                 fontWeight: FontWeight.w700,
@@ -362,7 +364,7 @@ class ConsultantCard extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 2),
-                    const Text('Senior Property Consultant',
+                    Text('senior_property_consultant'.tr(),
                         style: RT.captionSm, maxLines: 1),
                     const SizedBox(height: RS.x6),
                     Row(
@@ -510,9 +512,9 @@ class _PaymentEstimatorState extends State<PaymentEstimator> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Estimate your monthly payment', style: RT.title),
+                    Text('estimate_monthly_payment'.tr(), style: RT.title),
                     SizedBox(height: 2),
-                    Text('Get a quick affordability estimate',
+                    Text('get_quick_affordability_estimate'.tr(),
                         style: RT.captionSm),
                   ],
                 ),
@@ -545,7 +547,10 @@ class _PaymentEstimatorState extends State<PaymentEstimator> {
           Row(
             children: [
               Expanded(
-                child: Text('Down payment: ${_downPaymentPct.round()}%',
+                child: Text(
+                    'down_payment_label'.tr(namedArgs: {
+                      'percent': _downPaymentPct.round().toString()
+                    }),
                     style: RT.captionSm),
               ),
             ],
@@ -559,7 +564,9 @@ class _PaymentEstimatorState extends State<PaymentEstimator> {
             inactiveColor: RC.border,
             onChanged: (v) => setState(() => _downPaymentPct = v),
           ),
-          Text('Term: ${_years.round()} years', style: RT.captionSm),
+          Text(
+              'term_years_label'.tr(namedArgs: {'years': _years.round().toString()}),
+              style: RT.captionSm),
           Slider(
             value: _years,
             min: 5,

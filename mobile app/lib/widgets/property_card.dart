@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../core/app_state.dart';
@@ -149,12 +150,12 @@ class PropertyCard extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
-                      Text('View details',
+                      Text('view_details_label'.tr(),
                           style: RT.captionSm.copyWith(
                             color: RC.teal,
                             fontWeight: FontWeight.w700,
                           )),
-                      const Icon(Icons.chevron_right_rounded,
+                      const Icon(Icons.chevron_right_rounded, matchTextDirection: true,
                           size: 16, color: RC.teal),
                     ],
                   ),

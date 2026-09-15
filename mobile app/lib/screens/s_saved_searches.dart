@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../core/routes.dart';
@@ -82,18 +83,18 @@ class _SavedSearchesScreenState extends State<SavedSearchesScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded,
+          icon: const Icon(Icons.arrow_back_ios_new_rounded, matchTextDirection: true,
               size: 18, color: RC.navy),
           onPressed: () => Navigator.maybePop(context),
         ),
-        title: const Text('Saved Searches', style: RT.h2),
+        title: Text('saved_searches'.tr(), style: RT.h2),
         centerTitle: false,
         actions: [
           TextButton.icon(
             onPressed: () => Navigator.pushNamed(context, Routes.search),
             icon: const Icon(Icons.add_rounded, size: 18, color: RC.teal),
             label:
-                Text('New', style: RT.bodyStrong.copyWith(color: RC.teal)),
+                Text('new_label'.tr(), style: RT.bodyStrong.copyWith(color: RC.teal)),
           ),
           const SizedBox(width: RS.x4),
         ],
@@ -108,7 +109,7 @@ class _SavedSearchesScreenState extends State<SavedSearchesScreen> {
                     const Icon(Icons.search_off_rounded,
                         size: 56, color: RC.textTertiary),
                     const SizedBox(height: RS.x16),
-                    const Text('No saved searches', style: RT.h2),
+                    Text('no_saved_searches'.tr(), style: RT.h2),
                     const SizedBox(height: RS.x6),
                     Text(
                       'Search for properties and save your criteria to get alerts when new matches are found.',
@@ -196,7 +197,7 @@ class _SavedSearchesScreenState extends State<SavedSearchesScreen> {
                                         ),
                                         const PopupMenuItem(
                                           value: 'delete',
-                                          child: Text('Delete',
+                                          child: Text('delete'.tr(),
                                               style:
                                                   TextStyle(color: RC.danger)),
                                         ),

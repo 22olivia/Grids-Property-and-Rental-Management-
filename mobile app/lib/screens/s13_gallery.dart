@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:panorama_viewer/panorama_viewer.dart';
 import 'package:video_player/video_player.dart';
@@ -346,7 +347,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
     return [
       const Padding(
         padding: RS.page,
-        child: Text('Drag to look around the property',
+        child: Text('drag_property'.tr(),
             style: RT.caption),
       ),
       Padding(

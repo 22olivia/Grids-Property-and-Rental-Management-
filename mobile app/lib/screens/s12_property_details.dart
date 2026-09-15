@@ -206,7 +206,7 @@ class _FloorPlanTeaser extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const Icon(Icons.chevron_right_rounded,
+                  const Icon(Icons.chevron_right_rounded, matchTextDirection: true,
                       size: 20, color: RC.textTertiary),
                 ],
               ),

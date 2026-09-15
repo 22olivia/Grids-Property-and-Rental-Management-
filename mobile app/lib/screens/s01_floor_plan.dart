@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../core/routes.dart';
@@ -80,7 +81,7 @@ class _FloorPlanScreenState extends State<FloorPlanScreen> {
             padding: const EdgeInsets.fromLTRB(RS.x20, RS.x24, RS.x20, RS.x12),
             child: Row(
               children: [
-                const Expanded(child: Text('Floor Plans', style: RT.h2)),
+                Expanded(child: Text('floor_plans_title'.tr(), style: RT.h2)),
                 GestureDetector(
                   onTap: () => setState(() => _imperial = !_imperial),
                   child: Container(

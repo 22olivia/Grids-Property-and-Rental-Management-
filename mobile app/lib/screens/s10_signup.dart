@@ -112,7 +112,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       ),
                       child: Row(
                         children: [
-                          const Icon(Icons.arrow_back_ios_new_rounded,
+                          const Icon(Icons.arrow_back_ios_new_rounded, matchTextDirection: true,
                               size: 14, color: RC.navy),
                           const SizedBox(width: RS.x4),
                           Text('sign_in'.tr(),

@@ -71,7 +71,7 @@ class SupportCategoryDetailScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded,
+          icon: const Icon(Icons.arrow_back_ios_new_rounded, matchTextDirection: true,
               size: 18, color: RC.navy),
           onPressed: () => Navigator.maybePop(context),
         ),

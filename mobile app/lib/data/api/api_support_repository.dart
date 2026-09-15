@@ -18,6 +18,10 @@ class ApiSupportRepository implements SupportRepository {
     }
   }
 
+  /// GET /support/tickets/{id} — throws ApiException on failure (404,
+  /// network, etc.) since there's no sensible single-ticket mock fallback;
+  /// callers should wrap this in their own try/catch and show a retry/error
+  /// state.
   Future<SupportTicket> ticket(String id) async {
     final json = await _client.get('/support/tickets/$id');
     final data = json['data'] as Map<String, dynamic>? ?? json;

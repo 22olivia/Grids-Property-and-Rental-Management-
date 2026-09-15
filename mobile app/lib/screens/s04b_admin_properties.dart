@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../core/routes.dart';
@@ -77,7 +78,7 @@ class _AdminPropertiesScreenState extends State<AdminPropertiesScreen> {
                   const RBadge('Super Admin',
                       color: RC.navy, icon: Icons.shield_outlined),
                   const SizedBox(height: RS.x10),
-                  const Text('Properties', style: RT.display),
+                  Text('nav_properties'.tr(), style: RT.display),
                 ],
               ),
             ),
@@ -136,7 +137,7 @@ class _AdminPropertiesScreenState extends State<AdminPropertiesScreen> {
                               Icon(Icons.search_off_rounded,
                                   size: 40, color: RC.textTertiary),
                               const SizedBox(height: RS.x12),
-                              Text('No properties found',
+                              Text('no_properties_found'.tr(),
                                   style: RT.caption
                                       .copyWith(color: RC.textTertiary)),
                             ],

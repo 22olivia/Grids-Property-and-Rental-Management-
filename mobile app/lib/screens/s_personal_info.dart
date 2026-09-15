@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../core/app_state.dart';
@@ -46,11 +47,11 @@ class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded,
+          icon: const Icon(Icons.arrow_back_ios_new_rounded, matchTextDirection: true,
               size: 18, color: RC.navy),
           onPressed: () => Navigator.maybePop(context),
         ),
-        title: const Text('Personal Information', style: RT.h2),
+        title: Text('personal_information'.tr(), style: RT.h2),
         centerTitle: false,
         actions: [
           TextButton(
@@ -117,7 +118,7 @@ class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('Basic Details', style: RT.h2),
+                  Text('basic_details'.tr(), style: RT.h2),
                   const SizedBox(height: RS.x20),
                   RTextField(
                     label: 'Full Name',
@@ -164,7 +165,7 @@ class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('Additional Info', style: RT.h2),
+                  Text('additional_info'.tr(), style: RT.h2),
                   const SizedBox(height: RS.x20),
                   RTextField(
                     label: 'Nationality',

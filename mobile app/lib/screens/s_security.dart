@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../core/theme/tokens.dart';
@@ -61,11 +62,11 @@ class _SecurityScreenState extends State<SecurityScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded,
+          icon: const Icon(Icons.arrow_back_ios_new_rounded, matchTextDirection: true,
               size: 18, color: RC.navy),
           onPressed: () => Navigator.maybePop(context),
         ),
-        title: const Text('Security', style: RT.h2),
+        title: Text('security'.tr(), style: RT.h2),
         centerTitle: false,
       ),
       body: ListView(
@@ -89,9 +90,9 @@ class _SecurityScreenState extends State<SecurityScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Change Password', style: RT.title),
+                            Text('change_password'.tr(), style: RT.title),
                             SizedBox(height: 2),
-                            Text('Update your account password',
+                            Text('update_account_password'.tr(),
                                 style: RT.captionSm),
                           ],
                         ),
@@ -342,7 +343,7 @@ class _SecurityScreenState extends State<SecurityScreen> {
             TextButton(
               onPressed: () => toast(context, '$title session revoked',
                   icon: Icons.remove_circle_outline_rounded),
-              child: Text('Revoke',
+              child: Text('revoke_label'.tr(),
                   style: RT.caption.copyWith(
                       color: RC.danger, fontWeight: FontWeight.w700)),
             ),

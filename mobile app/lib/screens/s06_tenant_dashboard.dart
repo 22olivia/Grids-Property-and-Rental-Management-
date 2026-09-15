@@ -44,7 +44,7 @@ class _TenantDashboardScreenState extends State<TenantDashboardScreen> {
             children: [
               Text('confirm_payment'.tr(), style: RT.h1),
               const SizedBox(height: RS.x6),
-              const Text('Monthly rent for Marina Apartment A-1204',
+              Text('monthly_rent_marina'.tr(),
                   style: RT.caption),
               const SizedBox(height: RS.x20),
               const RCard(
@@ -319,7 +319,7 @@ class _TenantDashboardScreenState extends State<TenantDashboardScreen> {
                             children: [
                               Text('maintenance'.tr(), style: RT.title),
                               const SizedBox(height: 2),
-                              const Text('2 open • 1 in progress',
+                              Text('maintenance_status'.tr(),
                                   style: RT.captionSm),
                             ],
                           ),
@@ -329,7 +329,7 @@ class _TenantDashboardScreenState extends State<TenantDashboardScreen> {
                               color: RC.teal,
                               fontWeight: FontWeight.w700,
                             )),
-                        const Icon(Icons.chevron_right_rounded,
+                        const Icon(Icons.chevron_right_rounded, matchTextDirection: true,
                             size: 18, color: RC.teal),
                       ],
                     ),

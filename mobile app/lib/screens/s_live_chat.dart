@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../core/theme/tokens.dart';
@@ -105,7 +106,7 @@ class _LiveChatScreenState extends State<LiveChatScreen> {
       appBar: AppBar(
         backgroundColor: RC.navy,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded,
+          icon: const Icon(Icons.arrow_back_ios_new_rounded, matchTextDirection: true,
               size: 18, color: Colors.white),
           onPressed: () => Navigator.maybePop(context),
         ),
@@ -122,13 +123,13 @@ class _LiveChatScreenState extends State<LiveChatScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('RESIVYN Support',
+                  Text('resivyn_support'.tr(),
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 14,
                           fontWeight: FontWeight.w700)),
                   SizedBox(height: 1),
-                  Text('Online • typically replies in minutes',
+                  Text('online_reply_minutes'.tr(),
                       style: TextStyle(
                           color: Colors.white70, fontSize: 10.5)),
                 ],

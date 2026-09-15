@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../core/app_state.dart';
@@ -53,7 +54,7 @@ class SavedScreen extends StatelessWidget {
                   const IconBubble(Icons.bookmark_border_rounded,
                       tint: RC.textTertiary, size: 56),
                   const SizedBox(height: RS.x16),
-                  const Text('Nothing saved yet', style: RT.h2),
+                  Text('nothing_saved_yet'.tr(), style: RT.h2),
                   const SizedBox(height: RS.x6),
                   const Text(
                     'Tap the heart on any listing to keep it here for later.',
@@ -316,7 +317,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text('Building Management', style: RT.title),
+                      Text('building_management'.tr(), style: RT.title),
                       const SizedBox(height: 2),
                       Text(a.date, style: RT.captionSm),
                     ],
@@ -373,7 +374,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
               const SizedBox(height: RS.x12),
               const ThinDivider(),
               const SizedBox(height: RS.x8),
-              Text('Comments', style: RT.title),
+              Text('comments'.tr(), style: RT.title),
               const SizedBox(height: RS.x8),
 
               // Existing comments
@@ -616,7 +617,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
                     valueColor: spotsLeft > 0 ? RC.teal : RC.danger),
                 const SizedBox(height: RS.x12),
                 if (event.description.isNotEmpty) ...[
-                  Text('About', style: RT.title),
+                  Text('about_label'.tr(), style: RT.title),
                   const SizedBox(height: RS.x6),
                   Text(event.description, style: RT.body),
                   const SizedBox(height: RS.x16),
@@ -800,7 +801,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
                           children: [
                             Text(facility.name, style: RT.h2),
                             const SizedBox(height: 2),
-                            Text('Book a time slot', style: RT.captionSm),
+                            Text('book_a_time_slot'.tr(), style: RT.captionSm),
                           ],
                         ),
                       ),
@@ -810,7 +811,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
                   const ThinDivider(),
 
                   const SizedBox(height: RS.x12),
-                  Text('Select Date', style: RT.title),
+                  Text('select_date'.tr(), style: RT.title),
                   const SizedBox(height: RS.x8),
                   SizedBox(
                     height: 72,
@@ -871,7 +872,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
                   ),
 
                   const SizedBox(height: RS.x16),
-                  Text('Available Time Slots', style: RT.title),
+                  Text('available_time_slots'.tr(), style: RT.title),
                   const SizedBox(height: RS.x8),
                   for (var s = 0; s < slots.length; s++)
                     Padding(
@@ -903,7 +904,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Booking Summary', style: RT.title),
+                          Text('booking_summary'.tr(), style: RT.title),
                           const SizedBox(height: RS.x8),
                           KeyValueRow('Facility', facility.name),
                           KeyValueRow('Date', _formatDate(dates[selectedDate])),
@@ -972,7 +973,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
             ),
             const SizedBox(height: RS.x16),
             Center(
-              child: Text('Booking Confirmed!', style: RT.h2),
+              child: Text('booking_confirmed'.tr(), style: RT.h2),
             ),
             const SizedBox(height: RS.x8),
             Center(
@@ -1192,7 +1193,7 @@ class _TimeSlotChip extends StatelessWidget {
             const Icon(Icons.check_circle_outline_rounded,
                 size: 18, color: RC.teal)
           else
-            const Text('Taken', style: RT.captionSm),
+            Text('taken'.tr(), style: RT.captionSm),
         ],
       ),
     );
@@ -1323,7 +1324,7 @@ class _NeighbourChatScreenState extends State<NeighbourChatScreen> {
       appBar: AppBar(
         backgroundColor: RC.navy,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded,
+          icon: const Icon(Icons.arrow_back_ios_new_rounded, matchTextDirection: true,
               size: 18, color: Colors.white),
           onPressed: () => Navigator.maybePop(context),
         ),

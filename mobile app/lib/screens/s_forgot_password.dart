@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../core/routes.dart';
@@ -97,7 +98,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           borderRadius: RR.chip,
                           border: Border.all(color: RC.border),
                         ),
-                        child: const Icon(Icons.arrow_back_ios_new_rounded,
+                        child: const Icon(Icons.arrow_back_ios_new_rounded, matchTextDirection: true,
                             size: 16, color: RC.navy),
                       ),
                     ),
@@ -153,7 +154,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         children: [
           const Icon(Icons.lock_reset_rounded, size: 48, color: RC.teal),
           const SizedBox(height: RS.x20),
-          const Text('Forgot Password?', style: RT.display),
+          Text('forgot_password_title'.tr(), style: RT.display),
           const SizedBox(height: RS.x6),
           const Text(
             "No worries! Enter your email and we'll send you a reset code.",
@@ -186,7 +187,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         children: [
           const Icon(Icons.mark_email_read_outlined, size: 48, color: RC.teal),
           const SizedBox(height: RS.x20),
-          const Text('Check Your Email', style: RT.display),
+          Text('check_your_email'.tr(), style: RT.display),
           const SizedBox(height: RS.x6),
           Text(
             "We sent a 6-digit code to ${_email.text}. Enter it below.",
@@ -235,7 +236,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         children: [
           const Icon(Icons.lock_outline_rounded, size: 48, color: RC.teal),
           const SizedBox(height: RS.x20),
-          const Text('New Password', style: RT.display),
+          Text('new_password'.tr(), style: RT.display),
           const SizedBox(height: RS.x6),
           const Text(
             'Create a strong password for your account.',
@@ -305,7 +306,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 size: 48, color: RC.teal),
           ),
           const SizedBox(height: RS.x24),
-          const Text('All Done!', style: RT.display),
+          Text('all_done'.tr(), style: RT.display),
           const SizedBox(height: RS.x6),
           const Text(
             'Your password has been reset successfully. You can now sign in with your new password.',

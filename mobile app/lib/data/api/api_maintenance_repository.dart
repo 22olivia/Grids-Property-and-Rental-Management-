@@ -21,11 +21,13 @@ class ApiMaintenanceRepository implements MaintenanceRepository {
     }
   }
 
+  /// Work not yet started. GPMS's maintenance workflow has no "pending"
+  /// status — the equivalent state right after intake/triage is "assigned".
   Future<List<WorkOrder>> assigned() async {
     try {
       final json = await _client.get('/maintenance-requests', query: {
         'per_page': '20',
-        'status': 'pending',
+        'status': 'assigned',
       });
       final items = json['data'] as List? ?? [];
       return items.map((e) => _fromApi(e as Map<String, dynamic>)).toList();
@@ -48,10 +50,14 @@ class ApiMaintenanceRepository implements MaintenanceRepository {
   }
 
   WorkOrder _fromApi(Map<String, dynamic> json) {
+    final rentalUnit = json['rental_unit'] as Map<String, dynamic>?;
     return WorkOrder(
       id: json['id']?.toString() ?? '',
       title: json['subject'] as String? ?? json['title'] as String? ?? '',
-      unit: json['unit'] as String? ?? json['unit_number'] as String? ?? '',
+      unit: json['unit'] as String? ??
+          json['unit_number'] as String? ??
+          rentalUnit?['unit_number'] as String? ??
+          '',
       time: json['created_at'] as String? ?? '',
       priority: _parsePriority(json['priority'] as String?),
       status: json['status'] as String? ?? 'Assigned',

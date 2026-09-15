@@ -77,7 +77,6 @@
   "no_results": "لم يتم العثور على نتائج",
   "success": "نجاح",
   "confirm": "تأكيد",
-
   "good_morning": "صباح الخير، {name}",
   "dubai_uae": "دبي، الإمارات",
   "search_properties_hint": "ابحث عن العقارات والمجمعات أو المواقع",
@@ -105,7 +104,6 @@
   "dubai_team_reply": "فريقنا في دبي يرد خلال أقل من ساعتين، 7 أيام في الأسبوع.",
   "contact_support": "اتصل بالدعم",
   "exploring_communities": "استكشاف المجمعات",
-
   "live_chat": "محادثة مباشرة",
   "chat_with_team": "تحدث مع فريق الدعم",
   "whatsapp": "واتساب",
@@ -133,7 +131,6 @@
   "could_not_open_whatsapp": "تعذر فتح واتساب",
   "could_not_initiate_call": "تعذر بدء المكالمة",
   "could_not_open_email": "تعذر فتح عميل البريد الإلكتروني",
-
   "stay_updated": "ابقَ على اطلاع بما يهمك.",
   "mark_all_read": "تعيين الكل كمقروء",
   "all_read_done": "تم تعيين جميع الإشعارات كمقروءة",
@@ -144,7 +141,6 @@
   "management": "الإدارة",
   "payments": "المدفوعات",
   "support": "الدعم",
-
   "super_admin": "مدير النظام",
   "live": "مباشر",
   "platform_dashboard": "لوحة تحكم المنصة",
@@ -174,7 +170,6 @@
   "view_all": "عرض الكل",
   "top_communities_revenue": "أفضل المجمعات من حيث الإيرادات",
   "quick_controls": "أدوات التحكم السريعة",
-
   "assigned": "مُعيّن",
   "in_progress": "قيد التنفيذ",
   "on_hold": "معلق",
@@ -197,7 +192,6 @@
   "recent_activity": "النشاط الأخير",
   "upload_photos": "تحميل الصور",
   "mark_complete": "تحديد كمكتمل",
-
   "tenant_dashboard": "لوحة تحكم المستأجر",
   "tenant_home_desc": "إليك ما يحدث في منزلك.",
   "rent_due": "الإيجار مستحق",
@@ -237,7 +231,6 @@
   "service_charge_label": "رسوم الخدمة",
   "total_due": "المبلغ المستحق",
   "payment_success": "تم الدفع بنجاح — تم إرسال الإيصال",
-
   "owner_dashboard": "لوحة تحكم المالك",
   "owner_overview": "نظرة عامة على محفظتك العقارية",
   "reporting_period": "فترة التقرير",
@@ -266,10 +259,8 @@
   "type_reply": "اكتب ردك...",
   "send_reply": "إرسال الرد",
   "reply_sent": "تم إرسال الرد إلى {name}",
-
   "please_enter_email_password": "الرجاء إدخال البريد الإلكتروني وكلمة المرور",
   "welcome_user": "مرحباً، {name}!",
-
   "please_enter_name": "الرجاء إدخال اسمك",
   "please_enter_email": "الرجاء إدخال بريدك الإلكتروني",
   "password_min_6": "يجب أن تكون كلمة المرور 6 أحرف على الأقل",
@@ -286,7 +277,6 @@
   "confirm_password": "تأكيد كلمة المرور",
   "agree_terms_long": "أوافق على الشروط والأحكام وسياسة الخصوصية",
   "already_have_account": "لديك حساب بالفعل؟ ",
-
   "search_properties": "البحث عن عقارات",
   "find_perfect_space": "ابحث عن مساحتك المثالية",
   "search_hint": "ابحث حسب الموقع أو المجمع أو اسم العقار",
@@ -317,7 +307,6 @@
   "list": "قائمة",
   "properties_in_view": "{count} عقار في العرض",
   "map_view_dubai": "عرض الخريطة • دبي",
-
   "overview": "نظرة عامة",
   "amenities_tab": "المرافق",
   "floor_plan": "مخطط الطابق",
@@ -331,13 +320,11 @@
   "community_highlights": "أبرز ما في المجتمع",
   "area_summary": "ملخص المساحة",
   "book_viewing_btn": "حجز زيارة",
-
   "description": "الوصف",
   "monthly_payment": "الدفعة الشهرية",
   "open_full_floor_plans": "فتح مخططات الطوابق كاملة",
   "saved_to_list": "تم الحفظ في قائمتك",
   "removed_from_saved": "تمت الإزالة من المحفوظات",
-
   "property_gallery": "معرض العقار",
   "share_gallery": "مشاركة المعرض",
   "gallery_copied": "تم نسخ رابط المعرض",
@@ -349,7 +336,6 @@
   "drag_property": "اسحب للنظر حول العقار",
   "video_unavailable": "الفيديو غير متاح",
   "check_connection": "يرجى التحقق من اتصالك والمحاولة مرة أخرى.",
-
   "sell_property": "بيع عقارك",
   "list_5_steps": "أضف عقارك في 5 خطوات سهلة",
   "save_draft": "حفظ المسودة",
@@ -391,7 +377,6 @@
   "listings_reviewed": "تتم مراجعة الإعلانات خلال 24 ساعة",
   "team_verifies": "فريقنا يتحقق من وثائق الملكية قبل النشر.",
   "drop_pin": "ضع علامة على الخريطة",
-
   "about_resivyn_title": "عن RESIVYN",
   "real_estate_os": "نظام العقارات والمجتمعات",
   "what_drives_us": "ما يدفعنا",
@@ -399,7 +384,6 @@
   "by_the_numbers": "بالأرقام",
   "more": "المزيد",
   "contact_us": "اتصل بنا",
-
   "contact_us_title": "اتصل بنا",
   "were_here_help": "نحن هنا لمساعدتك.",
   "call_us": "اتصل بنا",
@@ -418,7 +402,6 @@
   "mon_fri": "الإثنين – الجمعة",
   "sat_sun": "السبت – الأحد",
   "closed": "مغلق",
-
   "choose_plan": "اختر خطتك",
   "select_best_plan": "اختر أفضل خطة لاحتياجاتك العقارية.",
   "monthly": "شهري",
@@ -436,7 +419,6 @@
   "choose_plan_btn": "اختيار الخطة",
   "per_month": "/ شهريًا",
   "per_year": "/ سنويًا",
-
   "privacy_policy_title": "سياسة الخصوصية",
   "terms_conditions_title": "الشروط والأحكام",
   "last_updated": "آخر تحديث: 20 مايو 2025",
@@ -449,7 +431,6 @@
   "i_agree": "أوافق",
   "terms_accepted": "تم قبول الشروط",
   "acknowledged": "تم الإقرار",
-
   "ticket_details": "تفاصيل التذكرة",
   "created": "أنشئ: {date}",
   "priority": "الأولوية",
@@ -466,7 +447,6 @@
   "need_urgent_help": "هل تحتاج مساعدة عاجلة؟ اتصل بالدعم",
   "type_message": "اكتب رسالة...",
   "attach_file": "إرفاق ملف",
-
   "book_a_viewing": "حجز زيارة",
   "schedule_property_visit": "حدد موعد زيارة عقار",
   "select_date": "اختر التاريخ",
@@ -478,7 +458,6 @@
   "viewing_booked": "تم حجز الزيارة!",
   "viewing_scheduled": "تم جدولة زيارتك بنجاح.",
   "booking_id": "رقم الحجز",
-
   "nav_home": "الرئيسية",
   "nav_search": "بحث",
   "nav_saved": "المحفوظات",
@@ -496,5 +475,48 @@
   "nav_more": "المزيد",
   "nav_communities": "المجمعات",
   "nav_support": "الدعم",
-  "nav_settings": "الإعدادات"
+  "nav_settings": "الإعدادات",
+  "profile_information": "معلومات الملف الشخصي",
+  "basic_details": "التفاصيل الأساسية",
+  "additional_info": "معلومات إضافية",
+  "forgot_password_title": "نسيت كلمة المرور؟",
+  "check_your_email": "تحقق من بريدك الإلكتروني",
+  "new_password": "كلمة مرور جديدة",
+  "all_done": "تم الانتهاء!",
+  "nothing_saved_yet": "لا يوجد شيء محفوظ بعد",
+  "building_management": "إدارة المبنى",
+  "comments": "التعليقات",
+  "about_label": "حول",
+  "book_a_time_slot": "احجز موعدًا",
+  "booking_confirmed": "تم تأكيد الحجز!",
+  "taken": "محجوز",
+  "resivyn_support": "دعم ريسيفين",
+  "online_reply_minutes": "متصل الآن • يرد عادةً خلال دقائق",
+  "set_as_default": "تعيين كافتراضي",
+  "remove_label": "إزالة",
+  "add_a_card": "إضافة بطاقة",
+  "enter_card_details": "أدخل تفاصيل بطاقتك أدناه.",
+  "floor_plans_title": "المخططات الطابقية",
+  "no_properties_found": "لم يتم العثور على عقارات",
+  "notification_settings_title": "إعدادات الإشعارات",
+  "from_label": "من",
+  "to_label": "إلى",
+  "until_label": "حتى",
+  "change_password": "تغيير كلمة المرور",
+  "update_account_password": "تحديث كلمة مرور حسابك",
+  "revoke_label": "إلغاء",
+  "no_saved_searches": "لا توجد عمليات بحث محفوظة",
+  "view_gallery": "عرض المعرض",
+  "senior_property_consultant": "مستشار عقاري أول",
+  "estimate_monthly_payment": "قدّر دفعتك الشهرية",
+  "get_quick_affordability_estimate": "احصل على تقدير سريع للقدرة على الشراء",
+  "down_payment_label": "الدفعة الأولى: {percent}%",
+  "term_years_label": "المدة: {years} سنة",
+  "view_details_label": "عرض التفاصيل",
+  "choose_photo": "اختر صورة",
+  "take_photo": "التقاط صورة",
+  "choose_from_gallery": "الاختيار من المعرض",
+  "select_photos": "اختر الصور",
+  "select_video": "اختر فيديو",
+  "app_version_footer": "RESIVYN v1.0.0 • نسخة معاينة محلية"
 }

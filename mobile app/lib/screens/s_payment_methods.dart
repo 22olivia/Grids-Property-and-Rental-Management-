@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../core/theme/tokens.dart';
@@ -38,11 +39,11 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded,
+          icon: const Icon(Icons.arrow_back_ios_new_rounded, matchTextDirection: true,
               size: 18, color: RC.navy),
           onPressed: () => Navigator.maybePop(context),
         ),
-        title: const Text('Payment Methods', style: RT.h2),
+        title: Text('payment_methods'.tr(), style: RT.h2),
         centerTitle: false,
       ),
       body: ListView(
@@ -97,11 +98,11 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
                               if (card.id != _defaultCard)
                                 const PopupMenuItem(
                                   value: 'default',
-                                  child: Text('Set as default'),
+                                  child: Text('set_as_default'.tr()),
                                 ),
                               const PopupMenuItem(
                                 value: 'remove',
-                                child: Text('Remove',
+                                child: Text('remove_label'.tr(),
                                     style: TextStyle(color: RC.danger)),
                               ),
                             ],
@@ -136,9 +137,9 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text('Add a card', style: RT.h1),
+                            Text('add_a_card'.tr(), style: RT.h1),
                             const SizedBox(height: RS.x6),
-                            const Text('Enter your card details below.',
+                            Text('enter_card_details'.tr(),
                                 style: RT.caption),
                             const SizedBox(height: RS.x20),
                             const RTextField(

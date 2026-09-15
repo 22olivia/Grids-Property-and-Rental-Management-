@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../core/routes.dart';
@@ -80,7 +81,7 @@ class _AdminCommunitiesScreenState extends State<AdminCommunitiesScreen> {
                   Row(
                     children: [
                       const Expanded(
-                        child: Text('Communities', style: RT.display),
+                        child: Text('communities'.tr(), style: RT.display),
                       ),
                       Text(
                         '${communities.length} total',
@@ -240,7 +241,7 @@ class _CommunityTile extends StatelessWidget {
             ),
             const Padding(
               padding: EdgeInsets.only(right: RS.x12),
-              child: Icon(Icons.chevron_right_rounded,
+              child: Icon(Icons.chevron_right_rounded, matchTextDirection: true,
                   size: 20, color: RC.textTertiary),
             ),
           ],

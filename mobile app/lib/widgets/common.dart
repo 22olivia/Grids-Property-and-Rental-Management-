@@ -402,6 +402,7 @@ class RIconButton extends StatelessWidget {
     this.tooltip,
     this.floating = false,
     this.tint,
+    this.mirrorInRtl = false,
   });
 
   final IconData icon;
@@ -412,6 +413,10 @@ class RIconButton extends StatelessWidget {
   /// Floating style is used over hero imagery (white pill, stronger shadow).
   final bool floating;
   final Color? tint;
+
+  /// Set true for directional icons (e.g. a back chevron) so they mirror
+  /// automatically when the app runs in a right-to-left locale like Arabic.
+  final bool mirrorInRtl;
 
   @override
   Widget build(BuildContext context) {
@@ -439,7 +444,10 @@ class RIconButton extends StatelessWidget {
             child: Stack(
               alignment: Alignment.center,
               children: [
-                Icon(icon, size: 19, color: tint ?? RC.navy),
+                Icon(icon,
+                    size: 19,
+                    color: tint ?? RC.navy,
+                    matchTextDirection: mirrorInRtl),
                 if (badge)
                   Positioned(
                     top: 10,
@@ -491,6 +499,7 @@ class ResivynHeader extends StatelessWidget {
           if (showBack) ...[
             RIconButton(
               icon: Icons.arrow_back_ios_new_rounded,
+              mirrorInRtl: true,
               tooltip: 'back'.tr(),
               onTap: () => Navigator.maybePop(context),
             ),
@@ -1194,7 +1203,7 @@ class RowItem extends StatelessWidget {
             ),
             if (trailing != null) ...[const SizedBox(width: RS.x8), trailing!],
             if (trailing == null && showChevron)
-              const Icon(Icons.chevron_right_rounded,
+              const Icon(Icons.chevron_right_rounded, matchTextDirection: true,
                   size: 20, color: RC.textTertiary),
           ],
         ),
@@ -1800,19 +1809,19 @@ Future<void> pickProfilePhoto(
           ),
           const Padding(
             padding: EdgeInsets.all(RS.x20),
-            child: Text('Choose photo', style: RT.h2),
+            child: Text('choose_photo'.tr(), style: RT.h2),
           ),
           ListTile(
             leading: const IconBubble(
                 Icons.camera_alt_rounded, tint: RC.teal, size: 36),
-            title: const Text('Take photo', style: RT.title),
+            title: Text('take_photo'.tr(), style: RT.title),
             onTap: () => Navigator.pop(ctx, _PickSource.camera),
           ),
           const ThinDivider(inset: 48),
           ListTile(
             leading: const IconBubble(
                 Icons.photo_library_outlined, tint: RC.info, size: 36),
-            title: const Text('Choose from gallery', style: RT.title),
+            title: Text('choose_from_gallery'.tr(), style: RT.title),
             onTap: () => Navigator.pop(ctx, _PickSource.gallery),
           ),
           const SizedBox(height: RS.x20),
@@ -1861,7 +1870,7 @@ void showMockPhotoPicker(BuildContext context, {VoidCallback? onPicked}) {
           ),
           const Padding(
             padding: EdgeInsets.all(RS.x20),
-            child: Text('Select photos', style: RT.h2),
+            child: Text('select_photos'.tr(), style: RT.h2),
           ),
           for (final item in const [
             ('Camera', Icons.camera_alt_rounded, RC.teal),
@@ -1872,7 +1881,7 @@ void showMockPhotoPicker(BuildContext context, {VoidCallback? onPicked}) {
               leading: IconBubble(item.$2, tint: item.$3, size: 36),
               title: Text(item.$1, style: RT.title),
               trailing:
-                  const Icon(Icons.chevron_right_rounded, color: RC.textTertiary),
+                  const Icon(Icons.chevron_right_rounded, matchTextDirection: true, color: RC.textTertiary),
               onTap: () {
                 Navigator.pop(ctx);
                 onPicked?.call();
@@ -1906,7 +1915,7 @@ void showMockVideoPicker(BuildContext context, {VoidCallback? onPicked}) {
           ),
           const Padding(
             padding: EdgeInsets.all(RS.x20),
-            child: Text('Select video', style: RT.h2),
+            child: Text('select_video'.tr(), style: RT.h2),
           ),
           for (final item in const [
             ('Record Video', Icons.videocam_rounded, RC.teal),
@@ -1917,7 +1926,7 @@ void showMockVideoPicker(BuildContext context, {VoidCallback? onPicked}) {
               leading: IconBubble(item.$2, tint: item.$3, size: 36),
               title: Text(item.$1, style: RT.title),
               trailing:
-                  const Icon(Icons.chevron_right_rounded, color: RC.textTertiary),
+                  const Icon(Icons.chevron_right_rounded, matchTextDirection: true, color: RC.textTertiary),
               onTap: () {
                 Navigator.pop(ctx);
                 onPicked?.call();
@@ -1958,7 +1967,7 @@ void showMockUrlDialog(BuildContext context,
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(ctx),
-          child: Text('Cancel', style: RT.bodyStrong.copyWith(color: RC.textSecondary)),
+          child: Text('cancel'.tr(), style: RT.bodyStrong.copyWith(color: RC.textSecondary)),
         ),
         TextButton(
           onPressed: () {
@@ -1967,7 +1976,7 @@ void showMockUrlDialog(BuildContext context,
             toast(context, 'Link saved',
                 icon: Icons.check_circle_outline_rounded);
           },
-          child: Text('Save', style: RT.bodyStrong.copyWith(color: RC.teal)),
+          child: Text('save'.tr(), style: RT.bodyStrong.copyWith(color: RC.teal)),
         ),
       ],
     ),
@@ -1993,7 +2002,7 @@ void showMockAttachmentPicker(BuildContext context, {VoidCallback? onPicked}) {
           ),
           const Padding(
             padding: EdgeInsets.all(RS.x20),
-            child: Text('Attach file', style: RT.h2),
+            child: Text('attach_file'.tr(), style: RT.h2),
           ),
           for (final item in const [
             ('Photo', Icons.photo_camera_outlined, RC.teal),
@@ -2005,7 +2014,7 @@ void showMockAttachmentPicker(BuildContext context, {VoidCallback? onPicked}) {
               leading: IconBubble(item.$2, tint: item.$3, size: 36),
               title: Text(item.$1, style: RT.title),
               trailing:
-                  const Icon(Icons.chevron_right_rounded, color: RC.textTertiary),
+                  const Icon(Icons.chevron_right_rounded, matchTextDirection: true, color: RC.textTertiary),
               onTap: () {
                 Navigator.pop(ctx);
                 onPicked?.call();
@@ -2092,7 +2101,7 @@ class _BookViewingSlot extends StatelessWidget {
             const Icon(Icons.check_circle_outline_rounded,
                 size: 18, color: RC.teal)
           else
-            const Text('Taken', style: RT.captionSm),
+            Text('taken'.tr(), style: RT.captionSm),
         ],
       ),
     );

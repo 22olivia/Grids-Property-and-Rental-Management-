@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../core/routes.dart';
@@ -46,11 +47,11 @@ class _AccountSettingsScreenState extends State<AccountSettingsScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded,
+          icon: const Icon(Icons.arrow_back_ios_new_rounded, matchTextDirection: true,
               size: 18, color: RC.navy),
           onPressed: () => Navigator.maybePop(context),
         ),
-        title: const Text('Account Settings', style: RT.h2),
+        title: Text('account_settings'.tr(), style: RT.h2),
         centerTitle: false,
         actions: [
           TextButton(
@@ -82,7 +83,7 @@ class _AccountSettingsScreenState extends State<AccountSettingsScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('Profile Information', style: RT.h2),
+                  Text('profile_information'.tr(), style: RT.h2),
                   const SizedBox(height: RS.x20),
                   RTextField(
                     label: 'Display Name',

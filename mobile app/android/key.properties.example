@@ -1,0 +1,12 @@
+# Copy this file to android/key.properties (same folder) and fill in the
+# real values. key.properties itself is already gitignored — never commit it
+# or the .jks file; if either leaks, treat the key as compromised.
+#
+# Generate the keystore first (see the packaging notes / README), e.g.:
+#   keytool -genkey -v -keystore ~/resivyn-upload-key.jks \
+#     -keyalg RSA -keysize 2048 -validity 10000 -alias resivyn
+
+storePassword=CHANGE_ME
+keyPassword=CHANGE_ME
+keyAlias=resivyn
+storeFile=/absolute/path/to/resivyn-upload-key.jks

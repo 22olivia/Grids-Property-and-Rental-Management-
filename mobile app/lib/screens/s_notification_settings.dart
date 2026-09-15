@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../core/theme/tokens.dart';
@@ -32,11 +33,11 @@ class _NotificationSettingsScreenState
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded,
+          icon: const Icon(Icons.arrow_back_ios_new_rounded, matchTextDirection: true,
               size: 18, color: RC.navy),
           onPressed: () => Navigator.maybePop(context),
         ),
-        title: const Text('Notification Settings', style: RT.h2),
+        title: Text('notification_settings_title'.tr(), style: RT.h2),
         centerTitle: false,
       ),
       body: ListView(
@@ -178,7 +179,7 @@ class _NotificationSettingsScreenState
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('From', style: RT.captionSm),
+                                Text('from_label'.tr(), style: RT.captionSm),
                                 const SizedBox(height: RS.x2),
                                 Text('10:00 PM',
                                     style: RT.bodyStrong.copyWith(fontSize: 14)),
@@ -192,7 +193,7 @@ class _NotificationSettingsScreenState
                               color: RC.tealSoft,
                               borderRadius: RR.chip,
                             ),
-                            child: const Text('to',
+                            child: Text('to_label'.tr(),
                                 style: TextStyle(
                                     color: RC.teal,
                                     fontWeight: FontWeight.w700,
@@ -203,7 +204,7 @@ class _NotificationSettingsScreenState
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('Until', style: RT.captionSm),
+                                Text('until_label'.tr(), style: RT.captionSm),
                                 const SizedBox(height: RS.x2),
                                 Text('7:00 AM',
                                     style: RT.bodyStrong.copyWith(fontSize: 14)),

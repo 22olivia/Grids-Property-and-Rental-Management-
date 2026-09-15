@@ -6,8 +6,21 @@ import 'app.dart';
 import 'core/service_locator.dart';
 
 /// Backend API base URL.
-/// Change this to point to your running Laravel backend.
-const String apiBaseUrl = 'http://127.0.0.1:8000/api/v1';
+///
+/// Defaults to the local Laravel dev server (matches `php artisan serve` +
+/// backendweb's own README quick-start), which only works on an emulator/
+/// simulator talking to a backend running on the SAME machine — a real
+/// device can never reach 127.0.0.1 on your laptop.
+///
+/// For a real build, override at build time instead of editing this file:
+///   flutter build apk --release \
+///     --dart-define=API_BASE_URL=https://your-api.up.railway.app/api/v1
+///   flutter run \
+///     --dart-define=API_BASE_URL=https://your-api.up.railway.app/api/v1
+const String apiBaseUrl = String.fromEnvironment(
+  'API_BASE_URL',
+  defaultValue: 'http://127.0.0.1:8000/api/v1',
+);
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,6 +57,11 @@ void main() async {
       ],
       path: 'assets/translations',
       fallbackLocale: const Locale('en'),
+      // Several locales (hi/ru/fr/es/tr/pt) only have partial coverage so
+      // far. Without this, a missing key renders as the raw key string
+      // (e.g. "account_settings") instead of falling back to readable
+      // English text.
+      useFallbackTranslations: true,
       child: const ResivynApp(),
     ),
   );

@@ -202,7 +202,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             children: [
                               Text(menu[i].$4!, style: RT.captionSm),
                               const SizedBox(width: RS.x4),
-                              const Icon(Icons.chevron_right_rounded,
+                              const Icon(Icons.chevron_right_rounded, matchTextDirection: true,
                                   size: 20, color: RC.textTertiary),
                             ],
                           ),
@@ -312,7 +312,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           const Icon(Icons.check_circle_rounded,
                               size: 20, color: RC.teal)
                         else
-                          const Icon(Icons.chevron_right_rounded,
+                          const Icon(Icons.chevron_right_rounded, matchTextDirection: true,
                               size: 20, color: RC.textTertiary),
                       ],
                     ),
@@ -336,7 +336,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
         const SizedBox(height: RS.x16),
         Center(
-          child: Text('RESIVYN v1.0.0 • Local preview build',
+          child: Text('app_version_footer'.tr(),
               style: RT.captionSm.copyWith(fontSize: 10)),
         ),
 

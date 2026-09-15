@@ -51,8 +51,12 @@ class Services {
     } else {
       // Even without auth, we can still use live repos for public endpoints.
       // But if the backend isn't reachable, stay in mock mode.
+      // Uses /health rather than /properties — /properties is staff-only
+      // (super_admin/owner/manager) in GPMS and would 403 for a tenant or
+      // an unauthenticated visitor, which previously made the app look
+      // "unreachable" and silently stay in mock mode for those users.
       try {
-        await _apiClient.get('/properties', query: {'per_page': '1'});
+        await _apiClient.get('/health');
         _useLiveRepos();
       } catch (_) {
         // Backend unreachable — stay in mock mode.

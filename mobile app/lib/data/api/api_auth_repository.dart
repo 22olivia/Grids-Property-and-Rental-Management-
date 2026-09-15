@@ -28,10 +28,10 @@ class ApiAuthRepository {
     }
   }
 
-  /// GET /me — returns current user.
+  /// GET /me — returns current user (GPMS wraps it as { user: {...} }).
   Future<ApiUser> me() async {
     final json = await _client.get('/me');
-    return _parseUser(json['data'] as Map<String, dynamic>? ?? json);
+    return _parseUser(json['user'] as Map<String, dynamic>? ?? json);
   }
 
   /// POST /forgot-password
@@ -67,11 +67,10 @@ class ApiAuthRepository {
     });
   }
 
-  /// GET /profile
-  Future<ApiUser> getProfile() async {
-    final json = await _client.get('/profile');
-    return _parseUser(json['data'] as Map<String, dynamic>? ?? json);
-  }
+  /// GET /me — same endpoint as [me]; GPMS has no separate GET /profile
+  /// route (only PUT /profile for updates), so this is kept as an alias
+  /// for callers that expect a getProfile() method.
+  Future<ApiUser> getProfile() => me();
 
   ApiUser _parseUser(Map<String, dynamic> json) {
     return ApiUser(

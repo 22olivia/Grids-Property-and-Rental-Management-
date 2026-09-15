@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../core/routes.dart';
@@ -103,7 +104,7 @@ class _SellPropertyScreenState extends State<SellPropertyScreen> {
                         const Icon(Icons.save_outlined,
                             size: 14, color: RC.navy),
                         const SizedBox(width: RS.x6),
-                        Text('Save Draft',
+                        Text('save_draft'.tr(),
                             style: RT.captionSm.copyWith(
                               color: RC.navy,
                               fontWeight: FontWeight.w700,
@@ -199,7 +200,7 @@ class _SellPropertyScreenState extends State<SellPropertyScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('Listing Type', style: RT.h2),
+        Text('listing_type'.tr(), style: RT.h2),
         const SizedBox(height: RS.x12),
         Row(
           children: [
@@ -278,7 +279,7 @@ class _SellPropertyScreenState extends State<SellPropertyScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('Property Details', style: RT.h2),
+        Text('property_details'.tr(), style: RT.h2),
         const SizedBox(height: RS.x12),
         RCard(
           child: Column(
@@ -310,7 +311,7 @@ class _SellPropertyScreenState extends State<SellPropertyScreen> {
         ),
 
         const SizedBox(height: RS.x16),
-        Text('Description',
+        Text('description'.tr(),
             style: RT.caption.copyWith(fontWeight: FontWeight.w700)),
         const SizedBox(height: RS.x8),
         RTextField(
@@ -340,7 +341,7 @@ class _SellPropertyScreenState extends State<SellPropertyScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('Location', style: RT.h2),
+        Text('location_step'.tr(), style: RT.h2),
         const SizedBox(height: RS.x12),
         _DropdownField(
           label: 'Community',
@@ -367,14 +368,14 @@ class _SellPropertyScreenState extends State<SellPropertyScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Pin exact location', style: RT.title),
+                    Text('pin_exact_location'.tr(), style: RT.title),
                     SizedBox(height: 2),
-                    Text('Buyers see an approximate area only',
+                    Text('buyers_approximate'.tr(),
                         style: RT.captionSm),
                   ],
                 ),
               ),
-              Icon(Icons.chevron_right_rounded,
+              Icon(Icons.chevron_right_rounded, matchTextDirection: true,
                   size: 20, color: RC.textTertiary),
             ],
           ),
@@ -388,9 +389,9 @@ class _SellPropertyScreenState extends State<SellPropertyScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('Photos & Media', style: RT.h2),
+        Text('photos_media'.tr(), style: RT.h2),
         const SizedBox(height: RS.x6),
-        const Text('Listings with 8+ photos get 3x more enquiries.',
+        Text('photos_8_more'.tr(),
             style: RT.caption),
         const SizedBox(height: RS.x16),
         GestureDetector(
@@ -412,9 +413,9 @@ class _SellPropertyScreenState extends State<SellPropertyScreen> {
                 IconBubble(Icons.add_photo_alternate_outlined,
                     tint: RC.teal, size: 52),
                 SizedBox(height: RS.x12),
-                Text('Upload photos', style: RT.title),
+                Text('upload_photos_label'.tr(), style: RT.title),
                 SizedBox(height: RS.x4),
-                Text('JPG or PNG • up to 10 MB each', style: RT.captionSm),
+                Text('jpg_png_10mb'.tr(), style: RT.captionSm),
               ],
             ),
           ),
@@ -453,7 +454,7 @@ class _SellPropertyScreenState extends State<SellPropertyScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('Review & Submit', style: RT.h2),
+        Text('review_submit'.tr(), style: RT.h2),
         const SizedBox(height: RS.x12),
         RCard(
           child: Column(
