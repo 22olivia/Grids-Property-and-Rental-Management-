@@ -1,0 +1,1463 @@
+Design a premium mobile application called RESIVYN — Real Estate & Community OS.
+
+Use one consistent design system across every screen.
+
+Brand:
+- RESIVYN
+- Tagline: "Real Estate & Community OS"
+- Premium real-estate technology platform
+- Dubai/UAE visual identity
+
+Visual style:
+- Clean premium white/off-white background
+- Deep navy primary text approximately #0B2348
+- Teal/turquoise primary accent approximately #00A99D
+- Soft gray secondary text
+- Very subtle borders
+- Soft diffuse shadows
+- Large rounded cards, approximately 20–24px radius
+- Generous whitespace
+- Modern professional line icons
+- Elegant typography
+- Strong visual hierarchy
+- Minimal gradients
+- No clutter
+- High-end real-estate SaaS aesthetic
+
+UI principles:
+- Mobile-first portrait layout
+- Consistent 8px spacing system
+- Consistent header structure
+- Consistent card styling
+- Consistent buttons
+- Consistent iconography
+- Consistent bottom navigation
+- Responsive layout
+- Production-ready appearance
+- Avoid generic template/dashboard styling
+
+Primary navigation:
+Home
+Search
+Saved
+Community
+Profile
+
+For role-specific interfaces, use appropriate navigation such as:
+Dashboard
+Properties
+Work Orders
+Schedule
+Assets
+Support
+Settings
+
+Make all buttons, navigation elements, tabs, dropdowns, toggles, cards and action controls interactive.
+
+Use realistic Dubai property imagery and professional profile photographs where required.
+
+Maintain RESIVYN branding consistently throughout every screen.
+SCREEN 01 — PROPERTY FLOOR PLAN / PROPERTY DETAILS
+Create a premium RESIVYN mobile property details screen focused on floor plans.
+
+Header:
+- Back button
+- RESIVYN logo
+- Share icon
+- Favorite/heart icon
+
+Hero property image:
+- Luxury modern villa in Dubai
+- Swimming pool
+- Palm trees
+- Dubai skyline
+- Burj Khalifa visible
+- Image counter "1 / 24"
+- View Gallery button
+- Carousel indicators
+
+Below hero create tabs:
+- Photos
+- Floor Plan
+- Video
+- 360 Tour
+
+Make Floor Plan active.
+
+Section:
+"Floor Plans"
+
+Unit selector:
+"Imperial (ft)"
+
+Create three floor-plan cards:
+1. Ground Floor
+   2,450 sqft
+2. First Floor
+   2,180 sqft
+3. Roof Terrace
+   980 sqft
+
+Ground Floor selected with teal border.
+
+Section:
+"Ground Floor Details"
+
+Create numbered room list:
+1. Living Room — 7.2m x 5.0m
+2. Dining Room — 4.6m x 4.0m
+3. Kitchen — 5.0m x 3.6m
+4. Guest Bedroom — 4.2m x 4.0m
+5. Ensuite Bathroom — 2.7m x 1.8m
+6. Maid's Room — 2.6m x 2.2m
+7. Powder Room — 2.0m x 1.6m
+8. Terrace — 6.0m x 3.0m
+
+Area Summary card:
+Plot Area — 5,732 sqft
+Built-up Area — 5,610 sqft
+Indoor Area — 4,630 sqft
+Outdoor Area — 980 sqft
+
+Furnishing & Finishes card:
+"Premium finishes with smart home automation, floor-to-ceiling windows, imported marble flooring, and branded fittings."
+
+Quick Facts:
+5 Bedrooms
+6 Bathrooms
+2 Parking
+Private Pool
+2 Levels
+
+Bottom property CTA:
+AED 8,200,000
+Luxury Villa
+Property ID: RV-9842
+
+Buttons:
+View 3D Tour
+Brochure
+Book Viewing
+
+Use the RESIVYN global design system.
+SCREEN 02 — SUPPORT & CONTACT CENTER
+Create a RESIVYN Support & Contact Center mobile screen.
+
+Header:
+RESIVYN logo
+Notification icon
+Profile icon
+
+Greeting:
+"Good morning, Alex"
+"Dubai, UAE"
+
+Weather:
+32°C
+Sunny
+
+Title:
+"Support & Contact Center"
+
+Subtitle:
+"We're here to help you. Choose how you'd like to connect."
+
+Create five support cards:
+
+Live Chat
+"Chat with our support team"
+
+WhatsApp
+"Message us on WhatsApp"
+
+Call Support
+"Speak with our experts"
+
+Email Us
+"Send us an email anytime"
+
+Create Ticket
+"Submit a request or report issue"
+
+Section:
+"How can we help?"
+
+Categories:
+Payments
+Invoices, billing & refunds
+
+Leasing
+Contracts, renewals & leasing support
+
+Maintenance
+Service requests & repairs
+
+Technical Help
+App, account & technical issues
+
+Legal
+Policies, compliance & legal support
+
+Quick Answers card:
+"Quick Answers"
+"Find answers to common questions"
+
+FAQ rows:
+How do I make a rent payment?
+How can I submit a maintenance request?
+How do I update my personal information?
+What is the security deposit policy?
+
+Recent Conversations:
+Maintenance Request — AC not cooling
+Ticket #TK-48291 • In Progress
+
+Payment Issue — Refund not received
+Ticket #TK-48122 • Resolved
+
+Login Issue — Cannot access account
+Ticket #TK-47988 • Closed
+
+Bottom navigation:
+Home / Search / Saved / Community / Profile
+SCREEN 03 — NOTIFICATIONS
+Create a premium RESIVYN Notifications screen.
+
+Header:
+RESIVYN logo
+Notification icon
+Profile icon
+
+Back button.
+
+Title:
+"Notifications"
+
+Subtitle:
+"Stay updated with what matters."
+
+Right action:
+"Mark all as read"
+
+Filter pills:
+All
+Property
+Management
+Payments
+Support
+
+All should be active using teal.
+
+Section:
+"Today"
+
+Notification:
+New inquiry from Sarah Johnson
+Interested in Marina Apartment • Dubai Marina
+10:24 AM
+Property thumbnail
+Unread teal indicator
+
+Notification:
+5 new matches for your saved search
+Waterfront properties in Dubai Marina
+9:15 AM
+Property thumbnail
+
+Notification:
+Price drop alert
+Palm Villa • Palm Jumeirah is now AED 7,900,000
+8:40 AM
+Property thumbnail
+
+Notification:
+Rent reminder
+Marina Apartment • Due on May 1, 2025
+8:00 AM
+AED 120,000 badge
+
+Section:
+"Yesterday"
+
+Maintenance update
+#MR-4587 • AC repair scheduled for Apr 30
+In Progress
+
+Community announcement
+Pool maintenance on May 2 • 9:00 AM – 1:00 PM
+
+Support reply from Alex
+Re: Issue with clubhouse booking
+
+Booking confirmed
+Clubhouse • May 3, 2025 • 3:00 PM – 5:00 PM
+Confirmed
+
+Bottom navigation.
+SCREEN 04 — SUPER ADMIN DASHBOARD
+Create a RESIVYN Super Admin Platform Dashboard.
+
+Header:
+RESIVYN logo
+Notification
+Profile
+
+Role:
+"Super Admin"
+"Platform Dashboard"
+
+Date:
+May 21, 2025
+Wednesday
+
+Metric cards:
+128 Active Communities
+3,562 Total Properties
+8,942 Owners
+12,685 Tenants
+245 Maintainers
+AED 1.24M Monthly SaaS Revenue
+
+Show percentage growth indicators.
+
+Revenue Overview:
+AED 1,240,000
++16% vs Apr 2025
+
+Create line chart:
+Apr 21
+Apr 28
+May 05
+May 12
+May 19
+
+Subscription Plans:
+Donut chart
+Total 128
+
+Enterprise — 32 (25%)
+Growth — 48 (38%)
+Starter — 28 (22%)
+Basic — 20 (15%)
+
+Secondary cards:
+Pending Approvals — 42
+Support Tickets — 18
+Announcements — 3
+System Status — All Systems Operational
+
+Platform Activity:
+New community "Marina Heights" was created
+Subscription upgraded to Enterprise Plan
+New user registered: Sarah Johnson
+Maintenance request submitted in Sunrise Villas
+
+Top Communities by Revenue:
+Palm Jumeirah Residences — AED 210,000
+Dubai Marina Towers — AED 160,500
+Downtown Views — AED 135,200
+Emirates Hills — AED 112,300
+
+Quick Controls:
+Users
+Plans
+Content
+Communities
+Reports
+Settings
+
+Bottom:
+Dashboard / Communities / Properties / Support / Settings
+SCREEN 05 — MAINTENANCE TEAM DASHBOARD
+Create a RESIVYN Maintenance Team Dashboard for a maintenance professional.
+
+Header:
+RESIVYN logo
+Notification
+Profile
+
+Profile:
+Professional male maintenance worker avatar
+"Good morning, Sam"
+"Maintenance Team"
+
+Weather:
+32°C
+Sunny
+
+Stats:
+8 Assigned
+3 In Progress
+2 On Hold
+12 Completed
+
+Urgent alert:
+"2 Urgent Issues"
+"High priority maintenance requires immediate attention."
+Button: View All
+
+Today's Schedule:
+9:00 AM — #WO-1024
+AC not cooling
+Marina Apartment 1502
+High
+
+11:00 AM — #WO-1025
+Kitchen sink leak
+Palm Villa 27
+Medium
+
+2:00 PM — #WO-1026
+Light replacement
+Skyline Residences B-804
+Low
+
+Your Areas:
+Dubai Marina — 3 Jobs
+Palm Jumeirah — 2 Jobs
+Downtown Dubai — 1 Job
+
+Quick actions:
+Start Job
+Upload Photos
+Mark Complete
+Contact Tenant / Owner
+
+Assigned Work Orders:
+#WO-1024 — AC not cooling in living room
+#WO-1025 — Kitchen sink leak
+#WO-1026 — Light replacement in hallway
+
+Pending Approvals:
+#WO-1024
+Replace water heater
+AED 1,250.00
+Marina Apartment 1103
+
+Recent Activity:
+#WO-1015 Completed — Paint touch-up
+#WO-1016 In Progress — Bathroom faucet replacement
+
+Bottom:
+Dashboard / Work Orders / Schedule / Assets / More
+SCREEN 06 — TENANT DASHBOARD
+Create a RESIVYN Tenant Dashboard.
+
+Header:
+RESIVYN logo
+Notification
+Profile
+
+Greeting:
+"Good morning, Alex 👋"
+"Marina Apartment, Dubai Marina"
+
+Weather:
+32°C
+Sunny
+
+Title:
+"Tenant Dashboard"
+
+Subtitle:
+"Here's what's happening in your home."
+
+Large rent card:
+"Rent Due"
+AED 12,000
+"Due on 05 May 2025"
+Button: Pay Rent Now
+"3 days remaining"
+
+Next Payment card:
+05 May 2025
+Monthly Rent
+AED 12,000
+View Payment History
+
+Lease Summary:
+Property — Marina Apartment
+Unit — A-1204
+Lease Period — 01 Jan 2025 – 31 Dec 2025
+
+Service Charges:
+This Month
+AED 850
+Due on 05 May 2025
+View Statement
+
+Maintenance:
+Open Requests — 2
+In Progress — 1
+View All Requests
+
+Community Announcements:
+Pool Maintenance on 10th May 2025
+"The swimming pool will be closed for routine maintenance."
+
+Visitor Passes:
+Active Passes — 2
+Upcoming — 1
+
+Documents:
+Lease Agreement PDF
+House Rules PDF
+
+Support:
+Need Help?
+We're here for you
+
+Quick Actions:
+Pay Rent
+Raise Ticket
+Book Facility
+Contact Management
+
+Bottom:
+Home / Community / Access / Payments / Menu
+SCREEN 07 — PROPERTY OWNER DASHBOARD
+Create a RESIVYN Property Owner Dashboard.
+
+Header:
+RESIVYN logo
+Notification
+Profile
+
+Greeting:
+"Good morning, Alex"
+"Property Owner"
+
+Title:
+"Owner Dashboard"
+
+Subtitle:
+"Overview of your real estate portfolio"
+
+Date selector:
+May 1 – May 31, 2025
+
+Portfolio Summary:
+Total Properties — 28
++2 this month
+
+Occupancy Rate — 92%
++4% vs Apr
+
+Monthly Rent Collected — AED 512,400
++12% vs Apr
+
+Pending Payments — AED 48,750
+3 payments
+
+Income Overview:
+AED 512,400
+Total Rent Collected
++12% vs Apr
+
+Create monthly bar chart:
+Dec / Jan / Feb / Mar / Apr / May
+
+Maintenance Requests:
+18 Total
+
+8 Open
+6 In Progress
+4 Completed
+
+Quick Actions:
+Add Property
+Tenants
+Contracts
+Payments
+Reports
+
+Recent Inquiries:
+Julia Martin — Interested in Marina Apartment
+Rohan Kapoor — Inquiry about Palm Villa
+Aisha Saeed — Looking for 2BR in Downtown
+
+Recent Payments:
+Marina Apartment 501 — AED 18,000
+Downtown Suites 1203 — AED 16,500
+Palm Villa 17 — AED 24,000
+
+Property Performance:
+Marina Apartment — 92% Occupied — AED 18,000/mo
+Palm Villa — 100% Occupied — AED 45,000/mo
+Downtown Suites — 88% Occupied — AED 16,500/mo
+Jumeirah Lofts — 85% Occupied — AED 14,000/mo
+
+Bottom:
+Home / Properties / Add / Community / Profile
+SCREEN 08 — LUXURY VILLA PROPERTY DETAILS
+Create a premium RESIVYN Luxury Villa Property Details screen.
+
+Hero image:
+Modern luxury villa
+Dubai skyline
+Burj Khalifa
+Swimming pool
+Palm trees
+Evening lighting
+
+Top:
+Back
+Share
+Favorite
+
+Badges:
+FOR SALE
+FEATURED
+
+Price:
+AED 8,200,000
+
+Title:
+Luxury Villa
+
+Location:
+Palm Jumeirah, Dubai
+
+Property statistics:
+5 Bedrooms
+6 Bathrooms
+7,280 sqft Built-up Area
+Villa
+
+Tabs:
+Overview
+Amenities
+Floor Plan
+Nearby
+
+Overview text:
+"Experience elevated living in this exceptional 5-bedroom villa located on the iconic Palm Jumeirah. Designed with elegance and crafted for comfort, this residence offers panoramic views, premium finishes, and world-class amenities."
+
+Property consultant:
+Michael Anderson
+Senior Property Consultant
+4.9 (128 reviews)
+
+Actions:
+Call
+WhatsApp
+Book Viewing
+
+Payment estimator:
+"Estimate your monthly payment"
+"Get a quick affordability estimate"
+Calculate
+
+Community Highlights:
+Private Beach Access
+24/7 Security & Concierge
+Infinity Pool & Fitness Center
+Landscaped Gardens
+
+Sticky bottom:
+AED 8,200,000
+Save
+Book Viewing
+SCREEN 09 — SEARCH PROPERTIES
+Create a RESIVYN Search Properties screen.
+
+Header:
+RESIVYN logo
+Notification
+Profile
+
+Title:
+"Search Properties"
+
+Subtitle:
+"Find your perfect space"
+
+Large search bar:
+"Search by location, community, or property name"
+
+Filters button.
+
+Transaction tabs:
+Buy
+Rent
+Sell
+
+Sort:
+Sort: Newest
+
+View toggle:
+Map
+List
+
+Property categories:
+All
+Apartment
+Villa
+House
+Store
+Office
+Land
+
+Text:
+"1,248 properties found"
+
+Save Search
+
+Property card 1:
+FOR SALE
+AED 8,200,000
+Luxury Villa
+Palm Jumeirah, Dubai
+5 bedrooms
+6 bathrooms
+7,280 sqft
+Beach Access
+Private Pool
+Wine Cellar
+Resivyn Real Estate
+
+Property card 2:
+FOR RENT
+AED 120,000 / year
+Marina Apartment
+Dubai Marina, Dubai
+2 bedrooms
+3 bathrooms
+1,340 sqft
+Furnished
+Marina View
+Balcony
+
+Property card 3:
+FOR SALE
+AED 3,500,000
+Prime Office Space
+Business Bay, Dubai
+2,450 sqft
+Fitted
+High Floor
+2 Parking
+
+Bottom banner:
+"Save time with Smart Search"
+"Get notified when new properties match your criteria."
+Button: Create Alert
+
+Bottom navigation.
+SCREEN 10 — LOGIN / ROLE SELECTION
+Create a RESIVYN authentication screen.
+
+Top:
+RESIVYN logo
+
+Right:
+Language/globe selector
+
+Main heading:
+"Welcome Back"
+
+Subtitle:
+"One app. Multiple roles. Seamless experiences."
+
+Section:
+"SELECT YOUR ROLE"
+
+Role cards:
+Visitor
+Tenant
+Owner
+Maintainer
+Super Admin
+
+Visitor selected using teal border.
+
+Login card:
+"Sign in to your account"
+"Secure access to your personalized portal."
+
+Input:
+Email address or phone number
+
+Input:
+Password
+Eye visibility icon
+
+Checkbox:
+Remember me
+
+Forgot password?
+
+Primary button:
+Sign In
+
+Divider:
+"or continue with"
+
+Buttons:
+Continue with Google
+Continue with Apple
+Continue with SSO
+
+Security message:
+"Your data is safe with us."
+"Enterprise-grade encryption ensures your information and access are always protected."
+
+Bottom:
+"New to RESIVYN? Create an account"
+SCREEN 11 — RESIVYN HOME
+Create the main RESIVYN Home screen.
+
+Header:
+RESIVYN logo
+Notification
+Profile
+
+Greeting:
+"Good morning, Alex"
+
+Location:
+Dubai, UAE
+
+Weather:
+32°C
+Sunny
+
+Search bar:
+"Search properties, communities, or locations"
+
+Filter/settings button.
+
+Main navigation pills:
+Buy
+Rent
+Sell
+Commercial
+Communities
+Manage
+
+Hero banner:
+Luxury Dubai villa
+Pool
+Palm trees
+Dubai skyline
+
+Badge:
+FEATURED
+
+Headline:
+"Luxury Living. Elevated."
+
+Subtitle:
+"Discover iconic properties in prime locations."
+
+Button:
+Explore Now
+
+Feature cards:
+Explore Properties
+"Buy, rent or invest in the best."
+
+Property Management
+"Operations, tenants & maintenance."
+
+Communities
+"Find or manage your community."
+
+Book Viewing
+"Schedule a visit with ease."
+
+Featured Properties:
+Luxury Villa — AED 8,200,000
+Marina Apartment — AED 120,000/year
+etc.
+
+Bottom:
+Home / Search / Saved / Community / Profile
+SCREEN 12 — PROPERTY DETAILS — FULL VIEW
+Create a full-screen RESIVYN luxury villa property page.
+
+Large hero image occupying the upper portion:
+Luxury Dubai villa
+Swimming pool
+Burj Khalifa
+Palm trees
+Dusk lighting
+
+Top floating controls:
+Back
+Share
+Favorite
+
+Image counter:
+1 / 24
+
+Carousel indicators.
+
+Badges:
+FOR SALE
+FEATURED
+
+Price:
+AED 8,200,000
+
+Property:
+Luxury Villa
+
+Location:
+Palm Jumeirah, Dubai
+
+Stats card:
+5 Bedrooms
+6 Bathrooms
+7,280 sqft
+Villa
+
+Overview tabs:
+Overview
+Amenities
+Floor Plan
+Nearby
+
+Description:
+"Experience elevated living in this exceptional 5-bedroom villa located on the iconic Palm Jumeirah. Designed with elegance and crafted for comfort, this residence offers panoramic views, premium finishes, and world-class amenities."
+
+Property consultant:
+Michael Anderson
+Senior Property Consultant
+4.9 (128 reviews)
+
+Buttons:
+Call
+WhatsApp
+
+Monthly payment section:
+"Estimate your monthly payment"
+AED 43,500 / month
+Calculate
+
+Community Highlights:
+Private Beach Access
+24/7 Security & Concierge
+Infinity Pool & Fitness Center
+Landscaped Gardens
+
+Bottom fixed actions:
+Save
+Book Viewing
+
+SCREEN 13 — PROPERTY GALLERY
+Create a RESIVYN Property Gallery screen.
+
+Header:
+Back
+RESIVYN logo
+Share
+
+Title:
+"Property Gallery"
+
+Tabs:
+Photos (24)
+Videos (3)
+360° Tour
+
+Photos active.
+
+Large featured property image.
+
+Create a two-column image grid containing:
+- Exterior villa
+- Living room
+- Bedroom
+- Kitchen
+- Pool
+- Dining room
+
+Video thumbnails should have play icons.
+
+At bottom:
+Large teal button:
+"View 360° Tour"
+
+Bottom navigation:
+Home
+Search
+Saved
+Community
+Profile
+SCREEN 14 — SELL YOUR PROPERTY
+Create a RESIVYN "Sell Your Property" multi-step listing form.
+
+Header:
+Back
+RESIVYN logo
+Save Draft
+
+Title:
+"Sell Your Property"
+
+Subtitle:
+"List your property in 5 easy steps"
+
+Progress indicator:
+1 Basic Info
+2 Details
+3 Location
+4 Photos
+5 Review
+
+Step 1 active.
+
+Listing Type:
+For Sale
+For Rent
+Featured
+
+Property Type:
+Villa
+
+Transaction Type:
+Resale
+
+Title input:
+"Luxury 5-Bedroom Villa with Burj Khalifa View"
+
+Price:
+AED 8,200,000
+
+Fields:
+Bedrooms — 5
+Bathrooms — 6
+Built-up Area — 7,280 sqft
+
+Community:
+Palm Jumeirah
+
+Description:
+"Experience elevated living in this exceptional 5-bedroom villa located on the iconic Palm Jumeirah. Designed with elegance and crafted for comfort, this residence offers panoramic views, premium finishes, and world-class amenities."
+
+Character count.
+
+Primary button:
+Continue
+
+Bottom navigation.
+SCREEN 15 — ABOUT RESIVYN
+Create a RESIVYN About screen.
+
+Header:
+Back
+Centered RESIVYN logo
+
+Title:
+"About RESIVYN"
+
+Large Dubai skyline / waterfront hero image.
+
+Main description:
+"RESIVYN is a next-generation real estate and community operating system that connects buyers, renters, owners, tenants, and property managers on one seamless platform. We simplify how people discover, manage, and grow their real estate experiences."
+
+Three cards:
+
+Our Mission
+"To simplify real estate experiences through innovation, transparency, and trust."
+
+Our Vision
+"To be the leading real estate OS that empowers communities worldwide."
+
+Our Values
+"Integrity, customer centricity, innovation, and a commitment to excellence."
+
+Section:
+"What We Offer"
+
+Cards:
+Buy
+Rent
+Sell
+Communities
+Property Management
+Maintenance
+
+Statistics:
+50K+ Active Listings
+Across Dubai & UAE
+
+120+ Communities
+Premium & Verified
+
+98% Client Satisfaction
+Trusted by Thousands
+
+Bottom navigation.
+SCREEN 16 — CONTACT US
+Create a RESIVYN Contact Us screen.
+
+Header:
+Back
+RESIVYN logo
+Chat icon
+
+Title:
+"Contact Us"
+
+Subtitle:
+"We’re here to help."
+
+Contact card:
+
+Call Us
++971 4 123 4567
+
+WhatsApp
++971 50 123 4567
+
+Email Us
+hello@resivyn.com
+
+Visit Our Offices
+View all branches
+
+Dubai map section:
+Dubai Marina
+Jumeirah
+Business Bay
+DIFC
+Downtown Dubai
+Dubai Creek Harbour
+
+Office card:
+"Head Office – Dubai"
+101 Business Bay, Dubai, United Arab Emirates
+
+Business Hours:
+Mon – Fri: 9:00 AM – 6:00 PM
+
+Saturday – Sunday:
+Closed
+
+Button:
+Get Directions
+
+Support card:
+"Need faster support?"
+"Start a live chat."
+
+Button:
+Start Live Chat
+
+Bottom navigation.
+SCREEN 17 — CHOOSE YOUR PLAN
+Create a premium RESIVYN subscription pricing screen.
+
+Header:
+Back
+RESIVYN logo
+Billing button
+
+Title:
+"Choose Your Plan"
+
+Subtitle:
+"Select the best plan for your real estate needs."
+
+Billing toggle:
+Monthly
+Yearly (Save 20%)
+
+Message:
+"Save up to AED 1,200 with yearly billing"
+
+Three pricing cards:
+
+STARTER
+"Perfect for getting started"
+
+AED 99 / month
+
+Features:
+Up to 5 Listings
+1 Featured Listing
+Community Access
+Basic Analytics
+Email Support
+Owner Portals — unavailable
+Maintenance Tools — unavailable
+
+Button:
+Choose Plan
+
+PROFESSIONAL
+RECOMMENDED
+
+"Ideal for growing portfolios"
+
+AED 249 / month
+
+Features:
+Up to 25 Listings
+5 Featured Listings
+Community Access
+Advanced Analytics
+Priority Support
+Owner Portals
+Maintenance Tools
+
+Button:
+Choose Plan
+
+ENTERPRISE
+
+"For large teams & enterprises"
+
+AED 499 / month
+
+Features:
+Unlimited Listings
+Unlimited Featured
+Community Access
+Advanced Analytics
+24/7 Priority Support
+Owner Portals
+Maintenance Tools
+
+Button:
+Choose Plan
+
+Bottom information:
+"All plans include access to RESIVYN mobile app"
+"Manage properties, connect with your community, and stay in control from anywhere."
+
+"Secure payments. Cancel anytime."
+
+Bottom navigation.
+SCREEN 18 — PRIVACY POLICY
+Create a RESIVYN Privacy Policy screen.
+
+Header:
+Back
+RESIVYN logo
+Privacy/security icon
+
+Title:
+"Privacy Policy"
+
+Subtitle:
+"Last updated: May 20, 2025"
+
+Create large rounded information cards.
+
+1. Introduction
+"At RESIVYN, we value your trust and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data."
+
+2. Information We Collect
+"We collect personal info you provide (e.g., name, email, phone), property details, usage data, and device information to deliver and improve our services."
+
+3. How We Use Your Information
+"We use your data to manage your account, list and manage properties, process transactions, provide support, and enhance your experience on RESIVYN."
+
+4. Data Sharing
+"We do not sell your personal data. We may share information with trusted service providers and legal authorities when required by law or to protect our rights."
+
+5. Cookies & Analytics
+"We use cookies and similar technologies to remember your preferences, analyze app usage, and improve our services. You can manage your cookie settings anytime."
+
+6. Your Rights
+"You have the right to access, correct, or delete your personal data. You can also object to processing or withdraw consent at any time through your account settings."
+
+Security message:
+"Your privacy matters."
+"We protect your data with enterprise-grade security."
+
+Button:
+"I Understand"
+
+Bottom navigation.
+SCREEN 19 — TERMS & CONDITIONS
+Create a RESIVYN Terms & Conditions screen.
+
+Header:
+Back
+RESIVYN logo
+Legal document/security icon
+
+Title:
+"Terms & Conditions"
+
+Last updated:
+May 20, 2025
+
+Cards:
+
+1. Acceptance of Terms
+"By accessing or using RESIVYN, you agree to be bound by these Terms & Conditions and our Privacy Policy."
+
+2. Use of Platform
+"RESIVYN provides a platform for real estate listings, communication, and related services. You agree to use the platform only for lawful purposes."
+
+3. User Accounts
+"You are responsible for maintaining the confidentiality of your account credentials and for all activities under your account. Notify us immediately of any unauthorized use."
+
+4. Listings & Content
+"You are solely responsible for the accuracy of listings and content you post. RESIVYN reserves the right to review, edit, or remove any content that violates these terms."
+
+5. Payments & Billing
+"All payments are processed securely. Fees, taxes, and charges are non-refundable unless stated otherwise."
+
+6. Limitation of Liability
+"RESIVYN is not liable for any indirect, incidental, or consequential damages arising from your use of the platform or reliance on any information provided."
+
+Information banner:
+"By using RESIVYN, you agree to these terms and conditions."
+
+Primary button:
+"I Agree"
+
+Bottom navigation.
+SCREEN 20 — TICKET DETAILS
+Create a premium RESIVYN Ticket Details screen.
+
+Header:
+- Circular white back button
+- RESIVYN logo
+- Support/headset icon
+
+Title:
+"Ticket Details"
+
+Ticket card:
+
+#TK-2025-1458
+Created: May 31, 2025 • 10:24 AM
+
+Priority:
+Medium
+
+Category:
+Technical Support
+
+Status:
+Open
+
+Issue:
+"Unable to upload property photos"
+
+Description:
+"I’m trying to upload photos while adding a new property listing, but the upload keeps failing. I’ve tried different file types and sizes, but nothing works."
+
+Conversation:
+
+Sara Collins
+Support Agent
+
+"Hi Alex, thanks for reaching out. I’m looking into this issue for you. Could you please share the file type and size of the photos you’re trying to upload?"
+
+May 31, 2025 • 10:28 AM
+
+User:
+"Hi Sara, I tried JPG images, around 5MB each. I also tried PNG and HEIC, same issue."
+
+May 31, 2025 • 10:33 AM
+
+Sara Collins:
+"Thanks for the info, Alex. We’ve identified the issue and our team is working on a fix. I’ll update you as soon as it’s resolved."
+
+May 31, 2025 • 10:40 AM
+
+User:
+"Great news! It’s been updated and now the uploads are working perfectly. Thank you!"
+
+May 31, 2025 • 11:02 AM
+
+Assigned Agent card:
+Sara Collins
+Support Specialist
+Average Response Time
+2h 15m
+
+Message composer:
+Attachment button
+"Type a message..."
+Send button
+
+Actions:
+Mark as Resolved
+Need urgent help? Call support
+
+Bottom:
+Home / Search / Saved / Community / Profile
+SCREEN 21 — PROFILE / ACCOUNT SETTINGS
+Create a premium RESIVYN Profile and Account Settings screen.
+
+Header:
+Back button
+RESIVYN logo
+Edit profile button
+
+Profile card:
+
+Professional male profile photo
+
+Alex Johnson
+Verified badge
+
+alex.johnson@email.com
+
+Member since May 15, 2023
+
+Verified badge
+
+Account menu:
+
+Personal Information
+Account Settings
+Security
+Notifications
+Language — English
+Payment Methods
+Saved Searches
+Help & Support
+About RESIVYN
+Privacy Policy
+Terms & Conditions
+
+Each row:
+- Modern line icon
+- Label
+- Chevron
+- Thin divider
+
+Preferences:
+
+Push Notifications — ON
+Email Updates — ON
+Dark Mode — OFF
+Biometrics — ON
+
+Use teal switches for active settings and light gray for inactive.
+
+Linked Roles & Portals:
+
+Owner
+Active
+Selected with teal highlight and check
+
+Tenant
+Access
+
+Visitor
+Access
+
+Logout:
+Large light-red rounded button
+Logout icon
+"Log Out"
+
+Bottom navigation:
+Home
+Search
+Saved
+Community
+Profile
+
+Profile is active using teal.
