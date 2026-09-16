@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:panorama_viewer/panorama_viewer.dart';
 import 'package:video_player/video_player.dart';
 
@@ -116,7 +117,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
             trailing: [
               RIconButton(
                 icon: Icons.ios_share_rounded,
-                tooltip: 'Share gallery',
+                tooltip: 'share_gallery'.tr(),
                 onTap: () {
                   toast(context, 'Gallery link copied to clipboard',
                       icon: Icons.check_circle_outline_rounded);
@@ -125,7 +126,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
             ],
           ),
 
-          PageTitle('Property Gallery', subtitle: _property.location),
+          PageTitle('property_gallery_title'.tr(), subtitle: _property.location),
 
           RUnderlineTabs(
             items: tabs,
@@ -218,7 +219,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
         ),
       ),
 
-      const SectionTitle('All Photos'),
+      SectionTitle('all_photos'.tr()),
 
       // Two-column grid.
       Padding(
@@ -344,7 +345,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
 
   List<Widget> _tourTab() {
     return [
-      const Padding(
+      Padding(
         padding: RS.page,
         child: Text('Drag to look around the property',
             style: RT.caption),
@@ -371,16 +372,15 @@ class _GalleryScreenState extends State<GalleryScreen> {
         ),
       ),
       const SizedBox(height: RS.x12),
-      const Padding(
+      Padding(
         padding: RS.page,
         child: InfoBanner(
-          title: 'Interactive 360° view',
-          body: 'Drag anywhere on the image to look around. '
-              'Use two fingers to zoom in and out.',
+          title: 'interactive_360'.tr(),
+          body: 'drag_look_around'.tr(),
           icon: Icons.threesixty_rounded,
         ),
       ),
-      const SectionTitle('Tour Stops'),
+      SectionTitle('tour_stops'.tr()),
       Padding(
         padding: RS.page,
         child: RCard(

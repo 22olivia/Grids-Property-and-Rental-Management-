@@ -218,7 +218,7 @@ class _OwnerDashboardScreenState extends State<OwnerDashboardScreen> {
 
             GreetingBlock(
               greeting: 'good_morning'.tr(namedArgs: {'name': 'Alex'}),
-              subtitle: 'Property Owner',
+              subtitle: 'property_owner_label'.tr(),
               subtitleIcon: Icons.business_center_outlined,
               weather: false,
             ),

@@ -53,7 +53,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
               trailing: [
                 RIconButton(
                   icon: Icons.notifications_active_outlined,
-                  tooltip: 'Notification settings',
+                  tooltip: 'notification_settings_tooltip'.tr(),
                   onTap: () =>
                       Navigator.pushNamed(context, Routes.notificationSettings),
                 ),

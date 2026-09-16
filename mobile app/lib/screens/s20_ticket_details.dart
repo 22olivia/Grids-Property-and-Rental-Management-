@@ -79,7 +79,7 @@ class _TicketDetailsScreenState extends State<TicketDetailsScreen> {
               trailing: [
                 RIconButton(
                   icon: Icons.headset_mic_outlined,
-                  tooltip: 'Call support',
+                  tooltip: 'call_support_tooltip'.tr(),
                   onTap: () async {
                     final uri = Uri.parse('tel:+97141234567');
                     if (await canLaunchUrl(uri)) {

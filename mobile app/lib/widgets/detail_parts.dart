@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../core/app_state.dart';
@@ -90,14 +91,14 @@ class _PropertyHeroState extends State<PropertyHero> {
                 RIconButton(
                   icon: Icons.arrow_back_ios_new_rounded,
                   floating: true,
-                  tooltip: 'Back',
+                  tooltip: 'back'.tr(),
                   onTap: () => Navigator.maybePop(context),
                 ),
                 const Spacer(),
                 RIconButton(
                   icon: Icons.ios_share_rounded,
                   floating: true,
-                  tooltip: 'Share',
+                  tooltip: 'share_action'.tr(),
                   onTap: () => toast(context, 'Share link copied to clipboard',
                       icon: Icons.link_rounded),
                 ),
@@ -241,7 +242,7 @@ class PropertyTitleBlock extends StatelessWidget {
               ),
               if (property.featured) ...[
                 const SizedBox(width: RS.x6),
-                const RBadge('FEATURED',
+                RBadge('featured_badge'.tr(),
                     color: RC.warning, solid: true, uppercase: true),
               ],
               const Spacer(),
@@ -502,10 +503,10 @@ class _PaymentEstimatorState extends State<PaymentEstimator> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Row(
+          Row(
             children: [
-              IconBubble(Icons.calculate_outlined, tint: RC.info),
-              SizedBox(width: RS.x12),
+              const IconBubble(Icons.calculate_outlined, tint: RC.info),
+              const SizedBox(width: RS.x12),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

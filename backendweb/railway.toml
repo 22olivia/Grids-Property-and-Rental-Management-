@@ -3,7 +3,7 @@ builder = "DOCKERFILE"
 dockerfilePath = "Dockerfile"
 
 [deploy]
-# Root Directory on Railway must be `backend` when deploying from the monorepo.
+# Root Directory on Railway must be `backendweb` when deploying from the monorepo.
 # Free tier: MySQL + this API only. SEED_ON_BOOT=1 once, then 0.
 startCommand = "bash start.sh"
 # Give free-tier cold starts time (MySQL wake + migrate) before marking unhealthy.

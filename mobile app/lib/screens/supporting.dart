@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import '../core/app_state.dart';
 import '../core/routes.dart';
@@ -30,7 +31,7 @@ class SavedScreen extends StatelessWidget {
             RIconButton(
               icon: Icons.notifications_none_rounded,
               badge: true,
-              tooltip: 'Notifications',
+              tooltip: 'notifications'.tr(),
               onTap: () => Navigator.pushNamed(context, Routes.notifications),
             ),
           ],
@@ -223,7 +224,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
             RIconButton(
               icon: Icons.notifications_none_rounded,
               badge: true,
-              tooltip: 'Notifications',
+              tooltip: 'notifications'.tr(),
               onTap: () => Navigator.pushNamed(context, Routes.notifications),
             ),
             const SizedBox(width: RS.x8),
@@ -735,7 +736,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
               onPressed: () => _showFacilityBooking(facility),
             )
           : isClosed
-              ? const RBadge('Closed', color: RC.warning)
+              ? RBadge('closed'.tr(), color: RC.warning)
               : null,
       onTap: isClosed
           ? () => toast(context, '${facility.name} is currently closed',

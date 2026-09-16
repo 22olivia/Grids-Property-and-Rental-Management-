@@ -88,7 +88,7 @@ See **[RAILWAY.md](./RAILWAY.md)** for the full free-tier guide (MySQL plugin, e
 
 Short version:
 
-1. Railway project → add **MySQL** + deploy this `backend/` service (Root Directory = `backend`).
+1. Railway project → add **MySQL** + deploy this `backendweb/` service (Root Directory = `backendweb`).
 2. Wire `DB_HOST=${{MySQL.MYSQLHOST}}` (and related `DB_*`) on the API service.
 3. Set `APP_KEY`, `APP_URL`, `FRONTEND_URL`, `QUEUE_CONNECTION=sync`, `CACHE_STORE=file`.
 4. First boot: `SEED_ON_BOOT=1`, then set to `0`.

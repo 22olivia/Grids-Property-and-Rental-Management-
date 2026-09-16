@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import '../core/app_state.dart';
 import '../core/theme/tokens.dart';
@@ -53,7 +54,7 @@ class PropertyCard extends StatelessWidget {
                     ),
                     if (property.featured) ...[
                       const SizedBox(width: RS.x6),
-                      const RBadge('FEATURED',
+                      RBadge('featured_badge'.tr(),
                           color: RC.warning, solid: true, uppercase: true),
                     ],
                   ],

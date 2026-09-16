@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import '../core/routes.dart';
 import '../core/theme/tokens.dart';
@@ -191,10 +192,10 @@ class _SavedSearchesScreenState extends State<SavedSearchesScreen> {
                                         PopupMenuItem(
                                           value: 'alert',
                                           child: Text(search.alerts
-                                              ? 'Pause alerts'
-                                              : 'Resume alerts'),
+                                              ? 'pause_alerts'.tr()
+                                              : 'resume_alerts'.tr()),
                                         ),
-                                        const PopupMenuItem(
+                                        PopupMenuItem(
                                           value: 'delete',
                                           child: Text('Delete',
                                               style:

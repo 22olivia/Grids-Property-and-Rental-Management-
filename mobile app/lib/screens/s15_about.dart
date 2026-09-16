@@ -217,7 +217,7 @@ class _AboutScreenState extends State<AboutScreen> {
                     ),
                     const ThinDivider(inset: 48),
                     RowItem(
-                      title: 'Privacy Policy',
+                      title: 'privacy_policy_title'.tr(),
                       leading: const IconBubble(Icons.shield_outlined,
                           tint: RC.purple, size: 36),
                       onTap: () => Navigator.pushNamed(context, Routes.privacy),
@@ -225,7 +225,7 @@ class _AboutScreenState extends State<AboutScreen> {
                     ),
                     const ThinDivider(inset: 48),
                     RowItem(
-                      title: 'Terms & Conditions',
+                      title: 'terms_conditions_title'.tr(),
                       leading: const IconBubble(Icons.gavel_outlined,
                           tint: RC.navy, size: 36),
                       onTap: () => Navigator.pushNamed(context, Routes.terms),

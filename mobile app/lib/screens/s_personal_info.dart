@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import '../core/app_state.dart';
 import '../core/theme/tokens.dart';
@@ -120,16 +121,16 @@ class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
                   const Text('Basic Details', style: RT.h2),
                   const SizedBox(height: RS.x20),
                   RTextField(
-                    label: 'Full Name',
-                    hint: 'Enter your name',
+                    label: 'full_name'.tr(),
+                    hint: 'enter_your_name'.tr(),
                     controller: _name,
                     icon: Icons.person_outline_rounded,
                     readOnly: !_editing,
                   ),
                   const SizedBox(height: RS.x14),
                   RTextField(
-                    label: 'Email Address',
-                    hint: 'Enter your email',
+                    label: 'email_address'.tr(),
+                    hint: 'enter_your_email_hint'.tr(),
                     controller: _email,
                     icon: Icons.mail_outline_rounded,
                     keyboardType: TextInputType.emailAddress,
@@ -137,8 +138,8 @@ class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
                   ),
                   const SizedBox(height: RS.x14),
                   RTextField(
-                    label: 'Phone Number',
-                    hint: 'Enter your phone',
+                    label: 'phone_number'.tr(),
+                    hint: 'enter_your_phone'.tr(),
                     controller: _phone,
                     icon: Icons.phone_outlined,
                     keyboardType: TextInputType.phone,
@@ -146,7 +147,7 @@ class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
                   ),
                   const SizedBox(height: RS.x14),
                   RTextField(
-                    label: 'Date of Birth',
+                    label: 'date_of_birth'.tr(),
                     hint: 'DD/MM/YYYY',
                     controller: _dob,
                     icon: Icons.cake_outlined,
@@ -167,16 +168,16 @@ class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
                   const Text('Additional Info', style: RT.h2),
                   const SizedBox(height: RS.x20),
                   RTextField(
-                    label: 'Nationality',
-                    hint: 'Enter nationality',
+                    label: 'nationality'.tr(),
+                    hint: 'enter_nationality'.tr(),
                     controller: _nationality,
                     icon: Icons.flag_outlined,
                     readOnly: !_editing,
                   ),
                   const SizedBox(height: RS.x14),
                   RTextField(
-                    label: 'Address',
-                    hint: 'Enter your address',
+                    label: 'address_label'.tr(),
+                    hint: 'enter_your_address'.tr(),
                     controller: _address,
                     icon: Icons.location_on_outlined,
                     readOnly: !_editing,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import '../core/theme/tokens.dart';
 import '../widgets/common.dart';
@@ -85,7 +86,7 @@ class _SecurityScreenState extends State<SecurityScreen> {
                     children: [
                       const IconBubble(Icons.lock_reset_rounded, size: 36),
                       const SizedBox(width: RS.x12),
-                      const Expanded(
+                      Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -119,8 +120,8 @@ class _SecurityScreenState extends State<SecurityScreen> {
                       child: Column(
                         children: [
                           RTextField(
-                            label: 'Current Password',
-                            hint: 'Enter current password',
+                            label: 'current_password'.tr(),
+                            hint: 'enter_current_password'.tr(),
                             controller: _currentPassword,
                             icon: Icons.lock_outline_rounded,
                             obscure: _obscureCurrent,
@@ -138,8 +139,8 @@ class _SecurityScreenState extends State<SecurityScreen> {
                           ),
                           const SizedBox(height: RS.x12),
                           RTextField(
-                            label: 'New Password',
-                            hint: 'Enter new password',
+                            label: 'new_password'.tr(),
+                            hint: 'enter_new_password'.tr(),
                             controller: _newPassword,
                             icon: Icons.lock_outline_rounded,
                             obscure: _obscureNew,
@@ -157,8 +158,8 @@ class _SecurityScreenState extends State<SecurityScreen> {
                           ),
                           const SizedBox(height: RS.x12),
                           RTextField(
-                            label: 'Confirm New Password',
-                            hint: 'Confirm new password',
+                            label: 'confirm_new_password'.tr(),
+                            hint: 'confirm_new_password_hint'.tr(),
                             controller: _confirmPassword,
                             icon: Icons.lock_outline_rounded,
                             obscure: _obscureConfirm,
@@ -200,8 +201,8 @@ class _SecurityScreenState extends State<SecurityScreen> {
               child: Column(
                 children: [
                   ToggleRow(
-                    title: 'Two-Factor Authentication',
-                    subtitle: 'Extra layer of security via SMS or authenticator',
+                    title: 'two_factor_auth'.tr(),
+                    subtitle: 'two_factor_desc'.tr(),
                     icon: Icons.security_rounded,
                     tint: RC.info,
                     value: _twoFactorEnabled,
@@ -216,8 +217,8 @@ class _SecurityScreenState extends State<SecurityScreen> {
                   ),
                   const ThinDivider(),
                   ToggleRow(
-                    title: 'Biometric Sign-in',
-                    subtitle: 'Face ID / fingerprint to sign in',
+                    title: 'biometric_signin'.tr(),
+                    subtitle: 'biometric_desc'.tr(),
                     icon: Icons.fingerprint_rounded,
                     tint: RC.purple,
                     value: _biometricsEnabled,
@@ -238,7 +239,7 @@ class _SecurityScreenState extends State<SecurityScreen> {
           const SizedBox(height: RS.x12),
 
           // ---- Active sessions ----
-          const SectionTitle('Active Sessions'),
+          SectionTitle('active_sessions'.tr()),
           Padding(
             padding: RS.page,
             child: RCard(
@@ -279,8 +280,8 @@ class _SecurityScreenState extends State<SecurityScreen> {
               child: Column(
                 children: [
                   RowItem(
-                    title: 'Deactivate Account',
-                    subtitle: 'Temporarily disable your account',
+                    title: 'deactivate_account'.tr(),
+                    subtitle: 'deactivate_account_desc'.tr(),
                     leading: const IconBubble(Icons.pause_circle_outline_rounded,
                         tint: RC.warning, size: 36),
                     onTap: () => toast(context, 'Account deactivation is not available in the local build',
@@ -289,8 +290,8 @@ class _SecurityScreenState extends State<SecurityScreen> {
                   ),
                   const ThinDivider(inset: 48),
                   RowItem(
-                    title: 'Delete Account',
-                    subtitle: 'Permanently remove all data',
+                    title: 'delete_account'.tr(),
+                    subtitle: 'permanently_remove_data'.tr(),
                     leading: const IconBubble(Icons.delete_forever_outlined,
                         tint: RC.danger, size: 36),
                     onTap: () => toast(context, 'Account deletion is not available in the local build',
@@ -329,7 +330,7 @@ class _SecurityScreenState extends State<SecurityScreen> {
                     Text(title, style: RT.title),
                     if (isCurrent) ...[
                       const SizedBox(width: RS.x6),
-                      const RBadge('Current', color: RC.success),
+                      RBadge('current_status'.tr(), color: RC.success),
                     ],
                   ],
                 ),

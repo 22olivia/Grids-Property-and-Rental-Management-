@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import '../core/routes.dart';
 import '../core/theme/tokens.dart';
@@ -52,7 +53,7 @@ class _AdminCommunitiesScreenState extends State<AdminCommunitiesScreen> {
                 RIconButton(
                   icon: Icons.notifications_none_rounded,
                   badge: true,
-                  tooltip: 'Notifications',
+                  tooltip: 'notifications'.tr(),
                   onTap: () =>
                       Navigator.pushNamed(context, Routes.notifications),
                 ),
@@ -74,13 +75,13 @@ class _AdminCommunitiesScreenState extends State<AdminCommunitiesScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const RBadge('Super Admin',
+                  RBadge('super_admin'.tr(),
                       color: RC.navy, icon: Icons.shield_outlined),
                   const SizedBox(height: RS.x10),
                   Row(
                     children: [
-                      const Expanded(
-                        child: Text('Communities', style: RT.display),
+Expanded(
+                        child: Text('communities'.tr(), style: RT.display),
                       ),
                       Text(
                         '${communities.length} total',
@@ -96,7 +97,7 @@ class _AdminCommunitiesScreenState extends State<AdminCommunitiesScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: RS.x20),
               child: RTextField(
-                hint: 'Search communities...',
+                hint: 'search_communities_hint'.tr(),
                 icon: Icons.search_outlined,
                 onChanged: (v) => setState(() => _search = v),
               ),
@@ -117,20 +118,20 @@ class _AdminCommunitiesScreenState extends State<AdminCommunitiesScreen> {
                 children: [
                   StatTile(
                     value: '${communities.length}',
-                    label: 'Communities',
+                    label: 'communities'.tr(),
                     icon: Icons.holiday_village_outlined,
                     tint: RC.teal,
                   ),
                   StatTile(
                     value: '${communities.fold<int>(0, (s, c) => s + c.properties)}',
-                    label: 'Total Properties',
+                    label: 'total_properties'.tr(),
                     icon: Icons.apartment_outlined,
                     tint: RC.info,
                   ),
                   StatTile(
                     value:
                         '${(communities.isEmpty ? 0 : communities.fold<int>(0, (s, c) => s + c.occupancy) / communities.length).round()}%',
-                    label: 'Avg Occupancy',
+                    label: 'avg_occupancy'.tr(),
                     icon: Icons.pie_chart_outline_rounded,
                     tint: RC.success,
                   ),
@@ -139,7 +140,7 @@ class _AdminCommunitiesScreenState extends State<AdminCommunitiesScreen> {
             ),
 
             // Community list
-            const SectionTitle('All Communities'),
+            SectionTitle('all_communities'.tr()),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: RS.x20),
               child: communities.isEmpty

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../core/routes.dart';
@@ -88,7 +89,7 @@ class SupportCategoryDetailScreen extends StatelessWidget {
             padding: RS.page,
             child: InfoBanner(
               title: '$category Support',
-              body: 'Find answers below or create a ticket for personalized help.',
+              body: 'find_answers_desc'.tr(),
               icon: Icons.help_outline_rounded,
             ),
           ),
@@ -97,7 +98,7 @@ class SupportCategoryDetailScreen extends StatelessWidget {
 
           // ---- FAQs ----
           if (faqs.isNotEmpty) ...[
-            const SectionTitle('Frequently Asked Questions'),
+            SectionTitle('faq_title'.tr()),
             Padding(
               padding: RS.page,
               child: RCard(
@@ -120,7 +121,7 @@ class SupportCategoryDetailScreen extends StatelessWidget {
           const SizedBox(height: RS.x12),
 
           // ---- Contact options ----
-          const SectionTitle('Still need help?'),
+          SectionTitle('still_need_help'.tr()),
           Padding(
             padding: RS.page,
             child: RCard(
@@ -128,8 +129,8 @@ class SupportCategoryDetailScreen extends StatelessWidget {
               child: Column(
                 children: [
                   RowItem(
-                    title: 'Create a Ticket',
-                    subtitle: 'Get a response within 24 hours',
+                    title: 'create_ticket'.tr(),
+                    subtitle: 'response_24h'.tr(),
                     leading: const IconBubble(Icons.confirmation_number_outlined,
                         tint: RC.teal, size: 38),
                     onTap: () {
@@ -142,8 +143,8 @@ class SupportCategoryDetailScreen extends StatelessWidget {
                   ),
                   const ThinDivider(inset: 50),
                   RowItem(
-                    title: 'Live Chat',
-                    subtitle: 'Chat with our support team now',
+                    title: 'live_chat'.tr(),
+                    subtitle: 'chat_with_team'.tr(),
                     leading: const IconBubble(Icons.forum_outlined,
                         tint: RC.info, size: 38),
                     onTap: () =>
@@ -152,7 +153,7 @@ class SupportCategoryDetailScreen extends StatelessWidget {
                   ),
                   const ThinDivider(inset: 50),
                   RowItem(
-                    title: 'Email Us',
+                    title: 'email_us'.tr(),
                     subtitle: 'hello@resivyn.com',
                     leading: const IconBubble(Icons.mail_outline_rounded,
                         tint: RC.purple, size: 38),
@@ -170,7 +171,7 @@ class SupportCategoryDetailScreen extends StatelessWidget {
                   ),
                   const ThinDivider(inset: 50),
                   RowItem(
-                    title: 'Call Support',
+                    title: 'call_support'.tr(),
                     subtitle: '+971 4 123 4567',
                     leading: const IconBubble(Icons.phone_in_talk_outlined,
                         tint: RC.success, size: 38),
@@ -193,7 +194,7 @@ class SupportCategoryDetailScreen extends StatelessWidget {
           // ---- Legal shortcuts for Legal category ----
           if (category == 'Legal') ...[
             const SizedBox(height: RS.x12),
-            const SectionTitle('Legal Documents'),
+            SectionTitle('legal_documents'.tr()),
             Padding(
               padding: RS.page,
               child: RCard(
@@ -201,8 +202,8 @@ class SupportCategoryDetailScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     RowItem(
-                      title: 'Privacy Policy',
-                      subtitle: 'How we collect and protect your data',
+                      title: 'privacy_policy_title'.tr(),
+                      subtitle: 'privacy_collect_desc'.tr(),
                       leading: const IconBubble(Icons.shield_outlined,
                           tint: RC.purple, size: 38),
                       onTap: () =>
@@ -211,8 +212,8 @@ class SupportCategoryDetailScreen extends StatelessWidget {
                     ),
                     const ThinDivider(inset: 50),
                     RowItem(
-                      title: 'Terms & Conditions',
-                      subtitle: 'Terms of service and usage',
+                      title: 'terms_conditions_title'.tr(),
+                      subtitle: 'terms_desc'.tr(),
                       leading: const IconBubble(Icons.gavel_outlined,
                           tint: RC.navy, size: 38),
                       onTap: () =>

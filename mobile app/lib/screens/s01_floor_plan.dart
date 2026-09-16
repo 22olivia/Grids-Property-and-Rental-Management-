@@ -1,4 +1,7 @@
+import 'dart:ui' as ui;
+
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import '../core/routes.dart';
 import '../core/theme/tokens.dart';
@@ -222,7 +225,7 @@ class _FloorPlanScreenState extends State<FloorPlanScreen> {
           ),
 
           // ---- Area summary ----
-          const SectionTitle('Area Summary'),
+          SectionTitle('area_summary'.tr()),
           Padding(
             padding: RS.page,
             child: RCard(
@@ -236,7 +239,7 @@ class _FloorPlanScreenState extends State<FloorPlanScreen> {
           ),
 
           // ---- Finishes ----
-          const SectionTitle('Furnishing & Finishes'),
+          SectionTitle('furnishing_finishes'.tr()),
           const Padding(
             padding: RS.page,
             child: RCard(
@@ -255,7 +258,7 @@ class _FloorPlanScreenState extends State<FloorPlanScreen> {
           ),
 
           // ---- Quick facts ----
-          const SectionTitle('Quick Facts'),
+          SectionTitle('quick_facts'.tr()),
           Padding(
             padding: RS.page,
             child: Wrap(
@@ -394,14 +397,14 @@ class _PlanSchematic extends StatelessWidget {
               children: [
                 RIconButton(
                   icon: Icons.zoom_out_map_rounded,
-                  tooltip: 'Expand plan',
+                  tooltip: 'expand_plan'.tr(),
                   onTap: () => toast(context, 'Opening full-screen plan',
                       icon: Icons.zoom_out_map_rounded),
                 ),
                 const SizedBox(width: RS.x8),
                 RIconButton(
                   icon: Icons.download_outlined,
-                  tooltip: 'Download plan',
+                  tooltip: 'download_plan'.tr(),
                   onTap: () => toast(context, 'Floor plan PDF downloading',
                       icon: Icons.download_outlined),
                 ),
@@ -475,7 +478,7 @@ class _SchematicPainter extends CustomPainter {
             fontWeight: FontWeight.w700,
           ),
         ),
-        textDirection: TextDirection.ltr,
+        textDirection: ui.TextDirection.ltr,
       )..layout();
       tp.paint(canvas, center - Offset(tp.width / 2, tp.height / 2));
     }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import '../core/routes.dart';
 import '../core/theme/tokens.dart';
@@ -161,7 +162,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           ),
           const SizedBox(height: RS.x32),
           RTextField(
-            hint: 'Email address',
+            hint: 'email_address'.tr(),
             controller: _email,
             icon: Icons.mail_outline_rounded,
             keyboardType: TextInputType.emailAddress,
@@ -194,7 +195,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           ),
           const SizedBox(height: RS.x32),
           RTextField(
-            hint: 'Enter 6-digit code',
+            hint: 'enter_6_digit_code'.tr(),
             controller: _code,
             icon: Icons.pin_outlined,
             keyboardType: TextInputType.number,
@@ -243,7 +244,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           ),
           const SizedBox(height: RS.x32),
           RTextField(
-            hint: 'New password',
+            hint: 'new_password'.tr(),
             controller: _newPassword,
             icon: Icons.lock_outline_rounded,
             obscure: _obscureNew,
@@ -260,7 +261,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           ),
           const SizedBox(height: RS.x12),
           RTextField(
-            hint: 'Confirm new password',
+            hint: 'confirm_new_password_hint'.tr(),
             controller: _confirmPassword,
             icon: Icons.lock_outline_rounded,
             obscure: _obscureConfirm,

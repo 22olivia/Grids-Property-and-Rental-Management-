@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import '../core/routes.dart';
 import '../core/service_locator.dart';
@@ -52,7 +53,7 @@ class _AdminPropertiesScreenState extends State<AdminPropertiesScreen> {
                 RIconButton(
                   icon: Icons.notifications_none_rounded,
                   badge: true,
-                  tooltip: 'Notifications',
+                  tooltip: 'notifications'.tr(),
                   onTap: () =>
                       Navigator.pushNamed(context, Routes.notifications),
                 ),
@@ -74,7 +75,7 @@ class _AdminPropertiesScreenState extends State<AdminPropertiesScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const RBadge('Super Admin',
+                  RBadge('super_admin'.tr(),
                       color: RC.navy, icon: Icons.shield_outlined),
                   const SizedBox(height: RS.x10),
                   const Text('Properties', style: RT.display),
@@ -86,7 +87,7 @@ class _AdminPropertiesScreenState extends State<AdminPropertiesScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: RS.x20),
               child: RTextField(
-                hint: 'Search properties...',
+                hint: 'search_properties_admin_hint'.tr(),
                 icon: Icons.search_outlined,
                 onChanged: (v) {
                   _search = v;

@@ -54,7 +54,7 @@ class _ContactScreenState extends State<ContactScreen> {
               trailing: [
                 RIconButton(
                   icon: Icons.forum_outlined,
-                  tooltip: 'Live chat',
+                  tooltip: 'live_chat_tooltip'.tr(),
                   onTap: () => Navigator.pushNamed(context, Routes.liveChat),
                 ),
               ],

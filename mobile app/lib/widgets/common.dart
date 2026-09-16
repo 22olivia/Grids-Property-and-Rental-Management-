@@ -1798,7 +1798,7 @@ Future<void> pickProfilePhoto(
               borderRadius: BorderRadius.circular(4),
             ),
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.all(RS.x20),
             child: Text('Choose photo', style: RT.h2),
           ),
@@ -1859,7 +1859,7 @@ void showMockPhotoPicker(BuildContext context, {VoidCallback? onPicked}) {
               borderRadius: BorderRadius.circular(4),
             ),
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.all(RS.x20),
             child: Text('Select photos', style: RT.h2),
           ),
@@ -1904,7 +1904,7 @@ void showMockVideoPicker(BuildContext context, {VoidCallback? onPicked}) {
               borderRadius: BorderRadius.circular(4),
             ),
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.all(RS.x20),
             child: Text('Select video', style: RT.h2),
           ),
@@ -1991,7 +1991,7 @@ void showMockAttachmentPicker(BuildContext context, {VoidCallback? onPicked}) {
               borderRadius: BorderRadius.circular(4),
             ),
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.all(RS.x20),
             child: Text('Attach file', style: RT.h2),
           ),

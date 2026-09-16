@@ -109,15 +109,15 @@ class _LiveChatScreenState extends State<LiveChatScreen> {
               size: 18, color: Colors.white),
           onPressed: () => Navigator.maybePop(context),
         ),
-        title: const Row(
+        title: Row(
           children: [
-            CircleAvatar(
+            const CircleAvatar(
               radius: 16,
               backgroundColor: RC.teal,
               child: Icon(Icons.support_agent_rounded,
                   size: 18, color: Colors.white),
             ),
-            SizedBox(width: RS.x10),
+            const SizedBox(width: RS.x10),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

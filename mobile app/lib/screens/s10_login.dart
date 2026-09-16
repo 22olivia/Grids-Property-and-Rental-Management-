@@ -89,11 +89,18 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
+  /// Map backend role to UserRole.
+  /// GPMS's real role strings are super_admin/owner/manager/tenant/vendor/
+  /// technician — there is no "maintainer" role in the backend. The app's
+  /// Maintainer surface (maintenance dashboard) is the closest match for
+  /// manager/vendor/technician accounts, so all three map there; anything
+  /// else falls back to visitor rather than silently mis-routing a real,
+  /// authenticated staff account to the generic guest tab shell.
   UserRole _mapRole(String backendRole) => switch (backendRole) {
         'super_admin' || 'admin' => UserRole.superAdmin,
         'owner' => UserRole.owner,
         'tenant' => UserRole.tenant,
-        'maintainer' => UserRole.maintainer,
+        'manager' || 'maintainer' || 'vendor' || 'technician' => UserRole.maintainer,
         _ => UserRole.visitor,
       };
 

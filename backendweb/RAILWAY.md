@@ -8,10 +8,10 @@ Use **MySQL** on Railway (not Postgres). Keep the stack tiny on free credits:
 
 1. Open [railway.app](https://railway.app) → **New Project**.
 2. **Add MySQL** (Database → MySQL).
-3. **Add a service** from this GitHub repo (`Nancy20052020/rental`).
+3. **Add a service** from this GitHub repo (`22olivia/Grids-Property-and-Rental-Management-`).
 4. Service settings:
-   - **Root Directory:** `backend`
-   - Builder: Dockerfile (auto from `backend/Dockerfile`)
+   - **Root Directory:** `backendweb`
+   - Builder: Dockerfile (auto from `backendweb/Dockerfile`)
 5. Generate a public domain: service → **Settings → Networking → Generate Domain**.
 
 ## 2) API service variables (copy these)
@@ -76,7 +76,7 @@ Health check path is `/up` (built into Laravel). Public API check remains `/api/
 Locally (once):
 
 ```bash
-cd backend
+cd backendweb
 php -r "echo 'base64:'.base64_encode(random_bytes(32)), PHP_EOL;"
 ```
 

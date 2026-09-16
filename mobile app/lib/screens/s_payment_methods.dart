@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import '../core/theme/tokens.dart';
 import '../widgets/common.dart';
@@ -51,7 +52,7 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
           const SizedBox(height: RS.x8),
 
           // ---- Saved cards ----
-          const SectionTitle('Saved Cards'),
+          SectionTitle('saved_cards'.tr()),
           Padding(
             padding: RS.page,
             child: Column(
@@ -76,7 +77,7 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
                                     Text(card.brand, style: RT.title),
                                     const SizedBox(width: RS.x6),
                                     if (card.id == _defaultCard)
-                                      const RBadge('Default', color: RC.teal),
+                                      RBadge('default_status'.tr(), color: RC.teal),
                                   ],
                                 ),
                                 const SizedBox(height: RS.x4),
@@ -95,11 +96,11 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
                             },
                             itemBuilder: (_) => [
                               if (card.id != _defaultCard)
-                                const PopupMenuItem(
+                                PopupMenuItem(
                                   value: 'default',
                                   child: Text('Set as default'),
                                 ),
-                              const PopupMenuItem(
+                              PopupMenuItem(
                                 value: 'remove',
                                 child: Text('Remove',
                                     style: TextStyle(color: RC.danger)),
@@ -141,8 +142,8 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
                             const Text('Enter your card details below.',
                                 style: RT.caption),
                             const SizedBox(height: RS.x20),
-                            const RTextField(
-                              label: 'Card Number',
+                            RTextField(
+                              label: 'card_number'.tr(),
                               hint: '•••• •••• •••• ••••',
                               icon: Icons.credit_card_rounded,
                               keyboardType: TextInputType.number,
@@ -150,17 +151,17 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
                             const SizedBox(height: RS.x14),
                             Row(
                               children: [
-                                const Expanded(
+                                Expanded(
                                   child: RTextField(
-                                    label: 'Expiry Date',
+                                    label: 'expiry_date'.tr(),
                                     hint: 'MM/YY',
                                     keyboardType: TextInputType.datetime,
                                   ),
                                 ),
                                 const SizedBox(width: RS.x12),
-                                const Expanded(
+                                Expanded(
                                   child: RTextField(
-                                    label: 'CVV',
+                                    label: 'cvv_label'.tr(),
                                     hint: '•••',
                                     obscure: true,
                                     keyboardType: TextInputType.number,
@@ -169,9 +170,9 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
                               ],
                             ),
                             const SizedBox(height: RS.x14),
-                            const RTextField(
-                              label: 'Cardholder Name',
-                              hint: 'Name on card',
+                            RTextField(
+                              label: 'cardholder_name'.tr(),
+                              hint: 'name_on_card'.tr(),
                               icon: Icons.person_outline_rounded,
                             ),
                             const SizedBox(height: RS.x20),
@@ -199,7 +200,7 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
           const SizedBox(height: RS.x12),
 
           // ---- Billing history ----
-          const SectionTitle('Billing History'),
+          SectionTitle('billing_history'.tr()),
           Padding(
             padding: RS.page,
             child: RCard(

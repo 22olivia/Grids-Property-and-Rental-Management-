@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import '../core/routes.dart';
 import '../core/theme/tokens.dart';
@@ -115,9 +116,9 @@ class _SellPropertyScreenState extends State<SellPropertyScreen> {
               ],
             ),
 
-            const PageTitle(
-              'Sell Your Property',
-              subtitle: 'List your property in 5 easy steps',
+            PageTitle(
+              'sell_your_property'.tr(),
+              subtitle: 'list_5_steps'.tr(),
             ),
 
             // ---- Progress ----
@@ -237,7 +238,7 @@ class _SellPropertyScreenState extends State<SellPropertyScreen> {
 
         const SizedBox(height: RS.x24),
         _DropdownField(
-          label: 'Property Type',
+          label: 'property_type_label'.tr(),
           value: _propertyType,
           options: _propertyTypes,
           icon: Icons.home_work_outlined,
@@ -246,7 +247,7 @@ class _SellPropertyScreenState extends State<SellPropertyScreen> {
 
         const SizedBox(height: RS.x16),
         _DropdownField(
-          label: 'Transaction Type',
+          label: 'transaction_type'.tr(),
           value: _transactionType,
           options: _transactionTypes,
           icon: Icons.swap_horiz_rounded,
@@ -255,7 +256,7 @@ class _SellPropertyScreenState extends State<SellPropertyScreen> {
 
         const SizedBox(height: RS.x16),
         RTextField(
-          label: 'Listing Title',
+          label: 'listing_title'.tr(),
           hint: 'e.g. Luxury 5-Bedroom Villa',
           controller: _title,
           icon: Icons.title_rounded,
@@ -263,7 +264,7 @@ class _SellPropertyScreenState extends State<SellPropertyScreen> {
 
         const SizedBox(height: RS.x16),
         RTextField(
-          label: 'Price (AED)',
+          label: 'price_aed'.tr(),
           hint: '8,200,000',
           controller: _price,
           icon: Icons.payments_outlined,
@@ -284,14 +285,14 @@ class _SellPropertyScreenState extends State<SellPropertyScreen> {
           child: Column(
             children: [
               _CounterRow(
-                label: 'Bedrooms',
+                label: 'bedrooms'.tr(),
                 icon: Icons.bed_outlined,
                 value: _bedrooms,
                 onChanged: (v) => setState(() => _bedrooms = v),
               ),
               const ThinDivider(),
               _CounterRow(
-                label: 'Bathrooms',
+                label: 'bathrooms'.tr(),
                 icon: Icons.bathtub_outlined,
                 value: _bathrooms,
                 onChanged: (v) => setState(() => _bathrooms = v),
@@ -302,7 +303,7 @@ class _SellPropertyScreenState extends State<SellPropertyScreen> {
 
         const SizedBox(height: RS.x16),
         RTextField(
-          label: 'Built-up Area (sqft)',
+          label: 'built_up_area_sqft'.tr(),
           hint: '7,280',
           controller: _area,
           icon: Icons.straighten_outlined,
@@ -314,7 +315,7 @@ class _SellPropertyScreenState extends State<SellPropertyScreen> {
             style: RT.caption.copyWith(fontWeight: FontWeight.w700)),
         const SizedBox(height: RS.x8),
         RTextField(
-          hint: 'Describe the property…',
+          hint: 'describe_property'.tr(),
           controller: _description,
           maxLines: 6,
           onChanged: (_) => setState(() {}),
@@ -343,26 +344,26 @@ class _SellPropertyScreenState extends State<SellPropertyScreen> {
         const Text('Location', style: RT.h2),
         const SizedBox(height: RS.x12),
         _DropdownField(
-          label: 'Community',
+          label: 'community_label'.tr(),
           value: _community,
           options: _communities,
           icon: Icons.location_city_outlined,
           onChanged: (v) => setState(() => _community = v),
         ),
         const SizedBox(height: RS.x16),
-        const RTextField(
-          label: 'Building / Street',
+        RTextField(
+          label: 'building_street'.tr(),
           hint: 'e.g. Frond K, Villa 27',
           icon: Icons.signpost_outlined,
         ),
         const SizedBox(height: RS.x16),
         RCard(
-          onTap: () => toast(context, 'Drop a pin on the map',
+          onTap: () => toast(context, 'drop_pin'.tr(),
               icon: Icons.my_location_rounded),
-          child: const Row(
+          child: Row(
             children: [
-              IconBubble(Icons.map_outlined, tint: RC.info),
-              SizedBox(width: RS.x12),
+              const IconBubble(Icons.map_outlined, tint: RC.info),
+              const SizedBox(width: RS.x12),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -406,15 +407,15 @@ class _SellPropertyScreenState extends State<SellPropertyScreen> {
                 width: 1.5,
               ),
             ),
-            child: const Column(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                IconBubble(Icons.add_photo_alternate_outlined,
+                const IconBubble(Icons.add_photo_alternate_outlined,
                     tint: RC.teal, size: 52),
-                SizedBox(height: RS.x12),
-                Text('Upload photos', style: RT.title),
-                SizedBox(height: RS.x4),
-                Text('JPG or PNG • up to 10 MB each', style: RT.captionSm),
+const SizedBox(height: RS.x12),
+                Text('upload_photos_label'.tr(), style: RT.title),
+                const SizedBox(height: RS.x4),
+                Text('jpg_png_10mb'.tr(), style: RT.captionSm),
               ],
             ),
           ),
@@ -425,20 +426,20 @@ class _SellPropertyScreenState extends State<SellPropertyScreen> {
           child: Column(
             children: [
               RowItem(
-                title: 'Add video tour',
-                subtitle: 'MP4 • up to 200 MB',
+                title: 'add_video_tour'.tr(),
+                subtitle: 'mp4_200mb'.tr(),
                 leading: const IconBubble(Icons.videocam_outlined,
                     tint: RC.purple, size: 38),
                 onTap: () => showMockVideoPicker(context),
               ),
               const ThinDivider(inset: 50),
               RowItem(
-                title: 'Add 360° tour link',
-                subtitle: 'Matterport or similar',
+                title: 'add_360_tour'.tr(),
+                subtitle: 'matterport'.tr(),
                 leading: const IconBubble(Icons.threesixty_rounded,
                     tint: RC.info, size: 38),
                 onTap: () => showMockUrlDialog(context,
-                    title: 'Add 360° tour link',
+                    title: 'add_360_tour'.tr(),
                     hint: 'https://my.matterport.com/...'),
               ),
             ],
@@ -488,9 +489,9 @@ class _SellPropertyScreenState extends State<SellPropertyScreen> {
           ),
         ),
         const SizedBox(height: RS.x16),
-        const InfoBanner(
-          title: 'Listings are reviewed within 24 hours',
-          body: 'Our team verifies ownership documents before publishing.',
+        InfoBanner(
+          title: 'listings_reviewed'.tr(),
+          body: 'team_verifies'.tr(),
           icon: Icons.verified_outlined,
         ),
       ],

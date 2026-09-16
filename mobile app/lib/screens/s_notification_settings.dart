@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import '../core/theme/tokens.dart';
 import '../widgets/common.dart';
@@ -45,22 +46,22 @@ class _NotificationSettingsScreenState
           const SizedBox(height: RS.x16),
 
           // ---- Channels ----
-          const SectionTitle('Notification Channels'),
+          SectionTitle('notification_channels'.tr()),
           Padding(
             padding: RS.page,
             child: RCard(
               child: Column(
                 children: [
                   ToggleRow(
-                    title: 'Push Notifications',
-                    subtitle: 'Real-time alerts on this device',
+                    title: 'push_notifications'.tr(),
+                    subtitle: 'alerts_on_device'.tr(),
                     icon: Icons.notifications_active_outlined,
                     value: _pushEnabled,
                     onChanged: (v) => setState(() => _pushEnabled = v),
                   ),
                   const ThinDivider(),
                   ToggleRow(
-                    title: 'Email Notifications',
+                    title: 'email_notifications'.tr(),
                     subtitle: 'Sent to alex.johnson@email.com',
                     icon: Icons.mail_outline_rounded,
                     tint: RC.info,
@@ -69,7 +70,7 @@ class _NotificationSettingsScreenState
                   ),
                   const ThinDivider(),
                   ToggleRow(
-                    title: 'SMS Alerts',
+                    title: 'sms_alerts'.tr(),
                     subtitle: 'Sent to +971 50 123 4567',
                     icon: Icons.sms_outlined,
                     tint: RC.success,
@@ -84,23 +85,23 @@ class _NotificationSettingsScreenState
           const SizedBox(height: RS.x12),
 
           // ---- Categories ----
-          const SectionTitle('Notification Types'),
+          SectionTitle('notification_types'.tr()),
           Padding(
             padding: RS.page,
             child: RCard(
               child: Column(
                 children: [
                   ToggleRow(
-                    title: 'Property Alerts',
-                    subtitle: 'New listings, price drops, saved matches',
+                    title: 'property_alerts_title'.tr(),
+                    subtitle: 'property_alerts_desc'.tr(),
                     icon: Icons.home_outlined,
                     value: _propertyAlerts,
                     onChanged: (v) => setState(() => _propertyAlerts = v),
                   ),
                   const ThinDivider(),
                   ToggleRow(
-                    title: 'Payment Reminders',
-                    subtitle: 'Rent due, invoices, receipts',
+                    title: 'payment_reminders_title'.tr(),
+                    subtitle: 'payment_reminders_desc'.tr(),
                     icon: Icons.receipt_long_outlined,
                     tint: RC.warning,
                     value: _paymentAlerts,
@@ -108,8 +109,8 @@ class _NotificationSettingsScreenState
                   ),
                   const ThinDivider(),
                   ToggleRow(
-                    title: 'Maintenance Updates',
-                    subtitle: 'Request status, scheduled visits',
+                    title: 'maintenance_updates_title'.tr(),
+                    subtitle: 'maintenance_updates_desc'.tr(),
                     icon: Icons.build_outlined,
                     tint: RC.info,
                     value: _maintenanceAlerts,
@@ -117,8 +118,8 @@ class _NotificationSettingsScreenState
                   ),
                   const ThinDivider(),
                   ToggleRow(
-                    title: 'Support Ticket Updates',
-                    subtitle: 'Replies, resolutions, escalations',
+                    title: 'support_ticket_updates_title'.tr(),
+                    subtitle: 'support_ticket_updates_desc'.tr(),
                     icon: Icons.support_agent_outlined,
                     tint: RC.success,
                     value: _supportUpdates,
@@ -126,8 +127,8 @@ class _NotificationSettingsScreenState
                   ),
                   const ThinDivider(),
                   ToggleRow(
-                    title: 'Community Posts',
-                    subtitle: 'Updates from your community feed',
+                    title: 'community_posts_title'.tr(),
+                    subtitle: 'community_posts_desc'.tr(),
                     icon: Icons.forum_outlined,
                     tint: RC.purple,
                     value: _communityPosts,
@@ -135,8 +136,8 @@ class _NotificationSettingsScreenState
                   ),
                   const ThinDivider(),
                   ToggleRow(
-                    title: 'Marketing & Promotions',
-                    subtitle: 'New features, offers, newsletters',
+                    title: 'marketing_promotions_title'.tr(),
+                    subtitle: 'marketing_promotions_desc'.tr(),
                     icon: Icons.campaign_outlined,
                     tint: RC.textSecondary,
                     value: _marketingEmails,
@@ -150,15 +151,15 @@ class _NotificationSettingsScreenState
           const SizedBox(height: RS.x12),
 
           // ---- Quiet Hours ----
-          const SectionTitle('Quiet Hours'),
+          SectionTitle('quiet_hours'.tr()),
           Padding(
             padding: RS.page,
             child: RCard(
               child: Column(
                 children: [
                   ToggleRow(
-                    title: 'Enable Quiet Hours',
-                    subtitle: 'Silence all notifications during set hours',
+                    title: 'enable_quiet_hours'.tr(),
+                    subtitle: 'quiet_hours_desc'.tr(),
                     icon: Icons.do_not_disturb_on_outlined,
                     tint: RC.navy,
                     value: _quietHours,
